@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cours de Japonais - JLPT N5 | John</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* HEADER */
+        .header {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,107,107,0.1) 0%, transparent 70%);
+            animation: float 15s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(-30px, 30px) rotate(180deg); }
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .claude-logo {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .header h1 {
+            color: #2c3e50;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header .subtitle {
+            color: #7f8c8d;
+            font-size: 1.2em;
+            font-style: italic;
+            position: relative;
+            z-index: 1;
+        }
+
+        .japanese-text {
+            font-size: 3em;
+            margin: 20px 0;
+            color: #c41e3a;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 1;
+        }
+
+        .progress-info {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .progress-info p {
+            margin: 5px 0;
+        }
+
+        /* LESSONS SECTION */
+        .lessons-section {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+
+        .lessons-section h2 {
+            color: #2c3e50;
+            font-size: 2em;
+            margin-bottom: 30px;
+            text-align: center;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .lessons-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            border-radius: 2px;
+        }
+
+        /* LESSON GRID */
+        .lessons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        /* LESSON CARD - TEMPLATE À COPIER ! */
+        .lesson-card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .lesson-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(180deg, #667eea, #764ba2);
+            transition: width 0.3s ease;
+        }
+
+        .lesson-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .lesson-card:hover::before {
+            width: 100%;
+            opacity: 0.1;
+        }
+
+        .lesson-emoji {
+            font-size: 3em;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .lesson-card h3 {
+            color: #2c3e50;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .lesson-card p {
+            color: #7f8c8d;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .lesson-link {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(102, 126, 234, 0.3);
+        }
+
+        .lesson-link:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
+        }
+
+        /* TEMPLATE SECTION - Pour copier-coller facilement */
+        .template-section {
+            background: #fff9e6;
+            border: 3px dashed #ffc107;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+
+        .template-section h2 {
+            color: #f57f17;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+
+        .template-code {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 20px;
+            border-radius: 10px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            overflow-x: auto;
+            position: relative;
+        }
+
+        .copy-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9em;
+            transition: background 0.3s ease;
+        }
+
+        .copy-btn:hover {
+            background: #2980b9;
+        }
+
+        /* FOOTER */
+        .footer {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            margin-top: 30px;
+        }
+
+        .footer p {
+            color: #7f8c8d;
+            margin: 10px 0;
+        }
+
+        .footer .emoji {
+            font-size: 1.5em;
+        }
+
+        /* STATS */
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 15px;
+            background: rgba(102, 126, 234, 0.1);
+            border-radius: 10px;
+            min-width: 150px;
+        }
+
+        .stat-number {
+            font-size: 2em;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .stat-label {
+            color: #7f8c8d;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+
+        /* RESPONSIVE */
+        /* iPad et tablettes (768px - 1024px) */
+        @media (max-width: 1024px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .header {
+                padding: 30px 20px;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .japanese-text {
+                font-size: 2.5em;
+            }
+            
+            .lessons-grid {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+                gap: 20px;
+            }
+            
+            .stats {
+                gap: 10px;
+            }
+            
+            .stat-item {
+                min-width: 120px;
+                padding: 12px;
+            }
+        }
+        
+        /* Mobile (max 768px) */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            
+            .container {
+                padding: 10px;
+            }
+            
+            .header {
+                padding: 20px 15px;
+            }
+            
+            .header h1 {
+                font-size: 1.5em;
+            }
+            
+            .header .subtitle {
+                font-size: 1em;
+            }
+            
+            .japanese-text {
+                font-size: 2em;
+            }
+            
+            .claude-logo {
+                width: 60px;
+                height: 60px;
+                font-size: 30px;
+            }
+            
+            .logo-container {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .progress-info {
+                padding: 12px;
+                font-size: 0.9em;
+            }
+            
+            .stats {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .stat-item {
+                width: 100%;
+            }
+            
+            .lessons-section {
+                padding: 20px 15px;
+            }
+            
+            .lessons-section h2 {
+                font-size: 1.5em;
+            }
+            
+            .lessons-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .lesson-card {
+                padding: 20px;
+            }
+            
+            .lesson-emoji {
+                font-size: 2.5em;
+            }
+            
+            .lesson-card h3 {
+                font-size: 1.3em;
+            }
+            
+            .lesson-card p {
+                font-size: 0.95em;
+            }
+            
+            .template-section {
+                padding: 20px 15px;
+            }
+            
+            .template-section h2 {
+                font-size: 1.3em;
+            }
+            
+            .template-code {
+                font-size: 0.75em;
+                padding: 15px;
+                overflow-x: auto;
+            }
+            
+            .footer {
+                padding: 20px 15px;
+            }
+        }
+        
+        /* Très petits mobiles (max 480px) */
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 1.3em;
+            }
+            
+            .japanese-text {
+                font-size: 1.8em;
+            }
+            
+            .lesson-link {
+                padding: 10px 20px;
+                font-size: 0.9em;
+            }
+            
+            .stat-number {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        
+        <!-- HEADER -->
+        <div class="header">
+            <div class="logo-container">
+                <div class="claude-logo">🤖</div>
+                <div>
+                    <h1>📚 Mes Cours de Japonais</h1>
+                    <p class="subtitle">Préparation JLPT N5 avec Claude</p>
+                </div>
+            </div>
+            
+            <div class="japanese-text">
+                がんばって！
+                <div style="font-size: 0.4em; color: #7f8c8d; margin-top: 5px;">
+                    (Ganbatte!)
+                </div>
+            </div>
+            
+            <div class="progress-info">
+                <p><strong>👤 Étudiant :</strong> John (Belgique 🇧🇪)</p>
+                <p><strong>🎯 Objectif :</strong> JLPT N5</p>
+                <p><strong>📅 Début :</strong> Septembre 2024 (INL)</p>
+                <p><strong>🔥 En cours :</strong> Vocabulaire & Grammaire de base</p>
+            </div>
+
+            <div class="stats">
+                <div class="stat-item">
+                    <div class="stat-number">2</div>
+                    <div class="stat-label">Leçons complétées</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">∞</div>
+                    <div class="stat-label">À venir !</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Motivation</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- LESSONS SECTION -->
+        <div class="lessons-section">
+            <h2>📖 Mes Leçons</h2>
+            
+            <div class="lessons-grid">
+                
+                <!-- LEÇON 1 : MAISON & LOCALISATION -->
+                <div class="lesson-card">
+                    <span class="lesson-emoji">🏠</span>
+                    <h3>Maison & Localisation</h3>
+                    <p>
+                        <strong>Thèmes :</strong> Vocabulaire de la maison, adjectifs descriptifs, 
+                        exprimer la localisation (proche/loin), particules に/から/と
+                    </p>
+                    <p>
+                        <strong>Contenu :</strong> だいどころ, おふろ, のうか, 
+                        adjectifs い/な, えきにちかい, phrases complètes
+                    </p>
+                    <a href="maison.html" class="lesson-link">
+                        Accéder à la leçon →
+                    </a>
+                </div>
+
+                <!-- LEÇON 2 : NOURRITURE -->
+                <div class="lesson-card">
+                    <span class="lesson-emoji">🍱</span>
+                    <h3>Nourriture & Restaurant</h3>
+                    <p>
+                        <strong>Thèmes :</strong> Plats japonais, ingrédients, boissons, 
+                        adjectifs de goût, expressions au restaurant
+                    </p>
+                    <p>
+                        <strong>Contenu :</strong> すし, ラーメン, おいしい, からい, 
+                        いただきます, すき/きらい, たべます/のみます
+                    </p>
+                    <a href="nourriture.html" class="lesson-link">
+                        Accéder à la leçon →
+                    </a>
+                </div>
+
+                <!-- TEMPLATE POUR FUTURES LEÇONS (laisser commenté) -->
+                <!--
+                <div class="lesson-card">
+                    <span class="lesson-emoji">✨</span>
+                    <h3>Titre de ta leçon</h3>
+                    <p>
+                        <strong>Thèmes :</strong> Description des thèmes principaux
+                    </p>
+                    <p>
+                        <strong>Contenu :</strong> Mots-clés principaux de la leçon
+                    </p>
+                    <a href="nom_du_fichier.html" class="lesson-link">
+                        Accéder à la leçon →
+                    </a>
+                </div>
+                -->
+
+            </div>
+        </div>
+
+        <!-- TEMPLATE SECTION - Pour copier-coller facilement -->
+        <div class="template-section">
+            <h2>📋 Template : Ajouter une nouvelle leçon</h2>
+            <p style="color: #f57f17; margin-bottom: 15px;">
+                <strong>Instructions :</strong> Copie le code ci-dessous et colle-le dans la section 
+                <code>&lt;div class="lessons-grid"&gt;</code> pour ajouter une nouvelle carte de leçon !
+            </p>
+            
+            <div class="template-code">
+<pre style="margin: 0; color: #ecf0f1;">
+&lt;!-- NOUVELLE LEÇON --&gt;
+&lt;div class="lesson-card"&gt;
+    &lt;span class="lesson-emoji"&gt;✨&lt;/span&gt;
+    &lt;h3&gt;Titre de ta leçon&lt;/h3&gt;
+    &lt;p&gt;
+        &lt;strong&gt;Thèmes :&lt;/strong&gt; Description des thèmes principaux
+    &lt;/p&gt;
+    &lt;p&gt;
+        &lt;strong&gt;Contenu :&lt;/strong&gt; Mots-clés principaux de la leçon
+    &lt;/p&gt;
+    &lt;a href="nom_du_fichier.html" class="lesson-link"&gt;
+        Accéder à la leçon →
+    &lt;/a&gt;
+&lt;/div&gt;
+</pre>
+            </div>
+            
+            <p style="margin-top: 15px; color: #f57f17;">
+                💡 <strong>Astuce :</strong> Change l'emoji, le titre, la description et le lien href="..." !
+            </p>
+        </div>
+
+        <!-- FOOTER -->
+        <div class="footer">
+            <p class="emoji">🎌</p>
+            <h3 style="color: #2c3e50; margin-bottom: 10px;">
+                がんばってね、ジョン！
+                <div style="font-size: 0.7em; color: #7f8c8d; font-weight: normal; margin-top: 5px;">
+                    (Ganbatte ne, Jon!)
+                </div>
+            </h3>
+            <p><strong>Professeur :</strong> Claude 🤖 | Anthropic</p>
+            <p><strong>Créé le :</strong> 28 janvier 2026</p>
+            <p style="margin-top: 20px; color: #7f8c8d; font-size: 0.9em;">
+                📚 Toutes les leçons sont adaptées au niveau JLPT N5<br>
+                🚫 Sans kanji - Uniquement hiragana & romaji<br>
+                💪 Conçu spécialement pour ton apprentissage !
+            </p>
+            <p style="margin-top: 20px; color: #667eea; font-weight: bold;">
+                日本語を勉強しましょう！<br>
+                <span style="font-size: 0.9em; font-weight: normal; color: #7f8c8d;">(Nihongo wo benkyō shimashō!)</span><br>
+                <span style="font-size: 0.9em; font-weight: normal;">(Étudions le japonais !)</span>
+            </p>
+        </div>
+
+    </div>
+</body>
+</html>

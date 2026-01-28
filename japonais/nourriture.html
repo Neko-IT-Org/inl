@@ -1,0 +1,1285 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vocabulaire Nourriture - JLPT N5</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 1.5cm;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 21cm;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        
+        .container {
+            background: white;
+            padding: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #d32f2f;
+            text-align: center;
+            border-bottom: 3px solid #d32f2f;
+            padding-bottom: 15px;
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #666;
+            font-style: italic;
+            margin-bottom: 30px;
+        }
+        
+        h2 {
+            color: #ff6f00;
+            background: linear-gradient(to right, #fff3e0, transparent);
+            padding: 10px 15px;
+            border-left: 5px solid #ff6f00;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        
+        h3 {
+            color: #f57c00;
+            margin-top: 20px;
+            padding-bottom: 5px;
+            border-bottom: 2px dotted #f57c00;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        th {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: bold;
+        }
+        
+        td {
+            padding: 10px 12px;
+            border: 1px solid #ddd;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #fff8f0;
+        }
+        
+        tr:hover {
+            background-color: #fff3e0;
+        }
+        
+        .hiragana {
+            font-size: 1.4em;
+            font-weight: bold;
+            color: #d32f2f;
+        }
+        
+        .romaji {
+            color: #666;
+            font-style: italic;
+            font-size: 0.95em;
+        }
+        
+        .exemple {
+            background: #e8f5e9;
+            border-left: 4px solid #4caf50;
+            padding: 12px 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        
+        .exemple-titre {
+            font-weight: bold;
+            color: #2e7d32;
+            margin-bottom: 8px;
+        }
+        
+        .phrase-jp {
+            color: #d32f2f;
+            font-size: 1.2em;
+            margin: 5px 0;
+            font-weight: 500;
+        }
+        
+        .phrase-romaji {
+            color: #999;
+            font-size: 0.8em;
+            font-style: italic;
+            margin: 2px 0 8px 0;
+        }
+        
+        .phrase-fr {
+            color: #555;
+            font-style: italic;
+        }
+        
+        .astuce {
+            background: #fff9c4;
+            border-left: 4px solid #fbc02d;
+            padding: 12px 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        
+        .astuce-titre {
+            font-weight: bold;
+            color: #f57f17;
+            margin-bottom: 5px;
+        }
+        
+        .attention {
+            background: #ffebee;
+            border-left: 4px solid #f44336;
+            padding: 12px 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        
+        .attention-titre {
+            font-weight: bold;
+            color: #c62828;
+            margin-bottom: 5px;
+        }
+        
+        .grammar-box {
+            background: #e1f5fe;
+            border: 2px solid #0288d1;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+        }
+        
+        .grammar-title {
+            color: #01579b;
+            font-weight: bold;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+        
+        .category-box {
+            background: #fff;
+            border: 2px solid #ff6f00;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+        }
+        
+        .exercice {
+            background: #f3e5f5;
+            border: 2px dashed #ab47bc;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        
+        .exercice-titre {
+            font-weight: bold;
+            color: #6a1b9a;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+        
+        .emoji {
+            font-size: 1.2em;
+        }
+        
+        ul {
+            line-height: 1.8;
+        }
+        
+        .highlight {
+            background: #ffeb3b;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+        
+        .section-divider {
+            height: 2px;
+            background: linear-gradient(to right, transparent, #ff6f00, transparent);
+            margin: 30px 0;
+        }
+        
+        .culture-box {
+            background: #fce4ec;
+            border-left: 4px solid #e91e63;
+            padding: 12px 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        
+        .culture-titre {
+            font-weight: bold;
+            color: #c2185b;
+            margin-bottom: 5px;
+        }
+        
+        @media print {
+            body {
+                background: white;
+            }
+            .container {
+                box-shadow: none;
+                padding: 0;
+            }
+            .attention, .astuce, .exemple {
+                page-break-inside: avoid;
+            }
+        }
+        
+        /* RESPONSIVE DESIGN - iPad et tablettes (768px - 1024px) */
+        @media (max-width: 1024px) {
+            body {
+                padding: 15px;
+            }
+            
+            .container {
+                padding: 25px;
+            }
+            
+            h1 {
+                font-size: 1.8em;
+            }
+            
+            h2 {
+                font-size: 1.5em;
+                padding: 8px 12px;
+            }
+            
+            h3 {
+                font-size: 1.2em;
+            }
+            
+            table {
+                font-size: 0.95em;
+            }
+            
+            th, td {
+                padding: 8px 10px;
+            }
+            
+            .hiragana {
+                font-size: 1.3em;
+            }
+        }
+        
+        /* RESPONSIVE DESIGN - Mobile (max 768px) */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            
+            .container {
+                padding: 15px;
+            }
+            
+            h1 {
+                font-size: 1.5em;
+                padding-bottom: 10px;
+            }
+            
+            .subtitle {
+                font-size: 0.9em;
+            }
+            
+            h2 {
+                font-size: 1.3em;
+                padding: 8px 10px;
+                margin-top: 20px;
+            }
+            
+            h3 {
+                font-size: 1.1em;
+            }
+            
+            table {
+                font-size: 0.85em;
+            }
+            
+            th, td {
+                padding: 6px 8px;
+            }
+            
+            .hiragana {
+                font-size: 1.2em;
+            }
+            
+            .romaji {
+                font-size: 0.85em;
+            }
+            
+            .phrase-jp {
+                font-size: 1.1em;
+            }
+            
+            .exemple, .astuce, .attention, .grammar-box, .culture-box {
+                padding: 10px 12px;
+                margin: 12px 0;
+            }
+            
+            .exercice {
+                padding: 12px;
+            }
+            
+            .grammar-box table th,
+            .grammar-box table td {
+                font-size: 0.9em;
+                padding: 8px 6px;
+            }
+        }
+        
+        /* RESPONSIVE DESIGN - Très petits mobiles (max 480px) */
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.3em;
+            }
+            
+            h2 {
+                font-size: 1.1em;
+            }
+            
+            h3 {
+                font-size: 1em;
+            }
+            
+            table {
+                font-size: 0.75em;
+            }
+            
+            th, td {
+                padding: 5px 6px;
+            }
+            
+            .hiragana {
+                font-size: 1.1em;
+            }
+            
+            .phrase-jp {
+                font-size: 1em;
+            }
+            
+            .exemple-titre, .astuce-titre, .attention-titre, .grammar-title, .culture-titre {
+                font-size: 0.95em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🍱 Vocabulaire Nourriture 🍜</h1>
+        <p class="subtitle">Récapitulatif JLPT N5 - Plats, Ingrédients & Expressions</p>
+
+        <!-- SECTION 1: REPAS -->
+        <h2>🍽️ 1. Les repas de la journée</h2>
+        
+        <table>
+            <tr>
+                <th>Hiragana</th>
+                <th>Romaji</th>
+                <th>Français</th>
+            </tr>
+            <tr>
+                <td class="hiragana">あさごはん</td>
+                <td class="romaji">asagohan</td>
+                <td>Petit-déjeuner</td>
+            </tr>
+            <tr>
+                <td class="hiragana">ひるごはん</td>
+                <td class="romaji">hirugohan</td>
+                <td>Déjeuner</td>
+            </tr>
+            <tr>
+                <td class="hiragana">ばんごはん</td>
+                <td class="romaji">bangohan</td>
+                <td>Dîner</td>
+            </tr>
+            <tr>
+                <td class="hiragana">ごはん</td>
+                <td class="romaji">gohan</td>
+                <td>Repas / Riz</td>
+            </tr>
+        </table>
+
+        <div class="exemple">
+            <div class="exemple-titre">✏️ Exemples de phrases</div>
+            <p class="phrase-jp">あさごはんをたべます。</p>
+            <p class="phrase-romaji">Asagohan wo tabemasu.</p>
+            <p class="phrase-fr">Je prends le petit-déjeuner.</p>
+            <p class="phrase-jp">ばんごはんはなんですか。</p>
+            <p class="phrase-romaji">Bangohan wa nan desu ka.</p>
+            <p class="phrase-fr">Qu'est-ce qu'on mange pour le dîner ?</p>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <!-- SECTION 2: PLATS JAPONAIS -->
+        <h2>🍜 2. Plats japonais populaires</h2>
+        
+        <h3>🍣 Plats principaux</h3>
+        <table>
+            <tr>
+                <th>Hiragana</th>
+                <th>Romaji</th>
+                <th>Français</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td class="hiragana">すし</td>
+                <td class="romaji">sushi</td>
+                <td>Sushi</td>
+                <td>Riz vinaigré + poisson</td>
+            </tr>
+            <tr>
+                <td class="hiragana">さしみ</td>
+                <td class="romaji">sashimi</td>
+                <td>Sashimi</td>
+                <td>Poisson cru tranché</td>
+            </tr>
+            <tr>
+                <td class="hiragana">てんぷら</td>
+                <td class="romaji">tempura</td>
+                <td>Tempura</td>
+                <td>Beignets frits</td>
+            </tr>
+            <tr>
+                <td class="hiragana">ラーメン</td>
+                <td class="romaji">rāmen</td>
+                <td>Ramen</td>
+                <td>Nouilles dans un bouillon</td>
+            </tr>
+            <tr>
+                <td class="hiragana">そば</td>
+                <td class="romaji">soba</td>
+                <td>Soba</td>
+                <td>Nouilles de sarrasin</td>
+            </tr>
+            <tr>
+                <td class="hiragana">うどん</td>
+                <td class="romaji">udon</td>
+                <td>Udon</td>
+                <td>Nouilles épaisses</td>
+            </tr>
+            <tr>
+                <td class="hiragana">やきそば</td>
+                <td class="romaji">yakisoba</td>
+                <td>Yakisoba</td>
+                <td>Nouilles sautées</td>
+            </tr>
+            <tr>
+                <td class="hiragana">カレーライス</td>
+                <td class="romaji">karē raisu</td>
+                <td>Curry-riz</td>
+                <td>Curry japonais + riz</td>
+            </tr>
+            <tr>
+                <td class="hiragana">とんかつ</td>
+                <td class="romaji">tonkatsu</td>
+                <td>Tonkatsu</td>
+                <td>Côtelette de porc panée</td>
+            </tr>
+            <tr>
+                <td class="hiragana">おにぎり</td>
+                <td class="romaji">onigiri</td>
+                <td>Onigiri</td>
+                <td>Boulette de riz</td>
+            </tr>
+            <tr>
+                <td class="hiragana">べんとう</td>
+                <td class="romaji">bentō</td>
+                <td>Bento</td>
+                <td>Boîte-repas</td>
+            </tr>
+        </table>
+
+        <div class="culture-box">
+            <div class="culture-titre">🎌 Note culturelle</div>
+            Le <strong>べんとう (bentō)</strong> est très populaire au Japon ! C'est une boîte-repas équilibrée qu'on peut acheter partout (konbini, gares, etc.) ou préparer à la maison. Les mamans japonaises préparent souvent des bentō très élaborés pour leurs enfants ! 🍱
+        </div>
+
+        <div class="section-divider"></div>
+
+        <!-- SECTION 3: ALIMENTS DE BASE -->
+        <h2>🍚 3. Aliments de base</h2>
+
+        <h3>🍚 Féculents</h3>
+        <table>
+            <tr>
+                <th>Hiragana</th>
+                <th>Romaji</th>
+                <th>Français</th>
+            </tr>
+            <tr>
+                <td class="hiragana">ごはん</td>
+                <td class="romaji">gohan</td>
+                <td>Riz (cuit)</td>
+            </tr>
+            <tr>
+                <td class="hiragana">パン</td>
+                <td class="romaji">pan</td>
+                <td>Pain</td>
+            </tr>
+            <tr>
+                <td class="hiragana">めん</td>
+                <td class="romaji">men</td>
+                <td>Nouilles</td>
+            </tr>
+        </table>
+
+        <h3>🥩 Viandes & Poissons</h3>
+        <table>
+            <tr>
+                <th>Hiragana</th>
+                <th>Romaji</th>
+                <th>Français</th>
+            </tr>
+            <tr>
+                <td class="hiragana">にく</td>
+                <td class="romaji">niku</td>
+                <td>Viande</td>
+            </tr>
+            <tr>
+                <td class="hiragana">ぎゅうにく</td>
+                <td class="romaji">gyūniku</td>
+                <td>Bœuf</td>
+            </tr>
+            <tr>
+                <td class="hiragana">ぶたにく</td>
+                <td class="romaji">butaniku</td>
+                <td>Porc</td>
+            </tr>
+            <tr>
+                <td class="hiragana">とりにく</td>
+                <td class="romaji">toriniku</td>
+                <td>Poulet</td>
+            </tr>
+            <tr>
+                <td class="hiragana">さかな</td>
+                <td class="romaji">sakana</td>
+                <td>Poisson</td>
+            </tr>
+            <tr>
+                <td class="hiragana">たまご</td>
+                <td class="romaji">tamago</td>
+                <td>Œuf</td>
+            </tr>
+        </table>
+
+        <h3>🥬 Légumes</h3>
+        <table>
+            <tr>
+                <th>Hiragana</th>
+                <th>Romaji</th>
+                <th>Français</th>
+            </tr>
+            <tr>
+                <td class="hiragana">やさい</td>
+                <td class="romaji">yasai</td>
+                <td>Légume(s)</td>
+            </tr>
+            <tr>
+                <td class="hiragana">トマト</td>
+                <td class="romaji">tomato</td>
+                <td>Tomate</td>
+            </tr>
+            <tr>
+                <td class="hiragana">にんじん</td>
+                <td class="romaji">ninjin</td>
+                <td>Carotte</td>
+            </tr>
+            <tr>
+                <td class="hiragana">たまねぎ</td>
+                <td class="romaji">tamanegi</td>
+                <td>Oignon</td>
+            </tr>
+            <tr>
+                <td class="hiragana">キャベツ</td>
+                <td class="romaji">kyabetsu</td>
+                <td>Chou</td>
+            </tr>
+            <tr>
+                <td class="hiragana">サラダ</td>
+                <td class="romaji">sarada</td>
+                <td>Salade</td>
+            </tr>
+        </table>
+
+        <h3>🍎 Fruits</h3>
+        <table>
+            <tr>
+                <th>Hiragana</th>
+                <th>Romaji</th>
+                <th>Français</th>
+            </tr>
+            <tr>
+                <td class="hiragana">くだもの</td>
+                <td class="romaji">kudamono</td>
+                <td>Fruit(s)</td>
+            </tr>
+            <tr>
+                <td class="hiragana">りんご</td>
+                <td class="romaji">ringo</td>
+                <td>Pomme</td>
+            </tr>
+            <tr>
+                <td class="hiragana">みかん</td>
+                <td class="romaji">mikan</td>
+                <td>Mandarine</td>
+            </tr>
+            <tr>
+                <td class="hiragana">バナナ</td>
+                <td class="romaji">banana</td>
+                <td>Banane</td>
+            </tr>
+            <tr>
+                <td class="hiragana">いちご</td>
+                <td class="romaji">ichigo</td>
+                <td>Fraise</td>
+            </tr>
+            <tr>
+                <td class="hiragana">オレンジ</td>
+                <td class="romaji">orenji</td>
+                <td>Orange</td>
+            </tr>
+        </table>
+
+        <div class="section-divider"></div>
+
+        <!-- SECTION 4: BOISSONS -->
+        <h2>🥤 4. Boissons</h2>
+
+        <table>
+            <tr>
+                <th>Hiragana</th>
+                <th>Romaji</th>
+                <th>Français</th>
+            </tr>
+            <tr>
+                <td class="hiragana">のみもの</td>
+                <td class="romaji">nomimono</td>
+                <td>Boisson</td>
+            </tr>
+            <tr>
+                <td class="hiragana">みず</td>
+                <td class="romaji">mizu</td>
+                <td>Eau</td>
+            </tr>
+            <tr>
+                <td class="hiragana">おちゃ</td>
+                <td class="romaji">ocha</td>
+                <td>Thé (japonais)</td>
+            </tr>
+            <tr>
+                <td class="hiragana">こうちゃ</td>
+                <td class="romaji">kōcha</td>
+                <td>Thé noir</td>
+            </tr>
+            <tr>
+                <td class="hiragana">コーヒー</td>
+                <td class="romaji">kōhī</td>
+                <td>Café</td>
+            </tr>
+            <tr>
+                <td class="hiragana">ジュース</td>
+                <td class="romaji">jūsu</td>
+                <td>Jus</td>
+            </tr>
+            <tr>
+                <td class="hiragana">ぎゅうにゅう</td>
+                <td class="romaji">gyūnyū</td>
+                <td>Lait</td>
+            </tr>
+            <tr>
+                <td class="hiragana">ビール</td>
+                <td class="romaji">bīru</td>
+                <td>Bière</td>
+            </tr>
+            <tr>
+                <td class="hiragana">さけ / おさけ</td>
+                <td class="romaji">sake / osake</td>
+                <td>Alcool / Saké</td>
+            </tr>
+        </table>
+
+        <div class="astuce">
+            <div class="astuce-titre">💡 Astuce culturelle</div>
+            <strong>おちゃ (ocha)</strong> désigne généralement le thé vert japonais. Si tu veux du thé noir, demande <strong>こうちゃ (kōcha)</strong> !
+        </div>
+
+        <div class="section-divider"></div>
+
+        <!-- SECTION 5: DESSERTS -->
+        <h2>🍰 5. Desserts & Sucreries</h2>
+
+        <table>
+            <tr>
+                <th>Hiragana</th>
+                <th>Romaji</th>
+                <th>Français</th>
+            </tr>
+            <tr>
+                <td class="hiragana">デザート</td>
+                <td class="romaji">dezāto</td>
+                <td>Dessert</td>
+            </tr>
+            <tr>
+                <td class="hiragana">ケーキ</td>
+                <td class="romaji">kēki</td>
+                <td>Gâteau</td>
+            </tr>
+            <tr>
+                <td class="hiragana">アイスクリーム</td>
+                <td class="romaji">aisukurīmu</td>
+                <td>Glace</td>
+            </tr>
+            <tr>
+                <td class="hiragana">チョコレート</td>
+                <td class="romaji">chokorēto</td>
+                <td>Chocolat</td>
+            </tr>
+            <tr>
+                <td class="hiragana">クッキー</td>
+                <td class="romaji">kukkī</td>
+                <td>Cookie</td>
+            </tr>
+            <tr>
+                <td class="hiragana">キャンディー</td>
+                <td class="romaji">kyandī</td>
+                <td>Bonbon</td>
+            </tr>
+        </table>
+
+        <div class="section-divider"></div>
+
+        <!-- SECTION 6: ADJECTIFS DE GOÛT -->
+        <h2>😋 6. Adjectifs pour décrire le goût</h2>
+
+        <h3>🔤 Adjectifs い (i-adjectives)</h3>
+        <table>
+            <tr>
+                <th>Hiragana</th>
+                <th>Romaji</th>
+                <th>Français</th>
+                <th>Exemple</th>
+            </tr>
+            <tr>
+                <td class="hiragana">おいしい</td>
+                <td class="romaji">oishii</td>
+                <td>Délicieux, bon</td>
+                <td>おいしいです！</td>
+            </tr>
+            <tr>
+                <td class="hiragana">まずい</td>
+                <td class="romaji">mazui</td>
+                <td>Mauvais (goût)</td>
+                <td>まずいです</td>
+            </tr>
+            <tr>
+                <td class="hiragana">あまい</td>
+                <td class="romaji">amai</td>
+                <td>Sucré</td>
+                <td>あまいケーキ</td>
+            </tr>
+            <tr>
+                <td class="hiragana">からい</td>
+                <td class="romaji">karai</td>
+                <td>Épicé, piquant</td>
+                <td>からいカレー</td>
+            </tr>
+            <tr>
+                <td class="hiragana">しょっぱい</td>
+                <td class="romaji">shoppai</td>
+                <td>Salé</td>
+                <td>しょっぱいスープ</td>
+            </tr>
+            <tr>
+                <td class="hiragana">すっぱい</td>
+                <td class="romaji">suppai</td>
+                <td>Acide, aigre</td>
+                <td>すっぱいレモン</td>
+            </tr>
+            <tr>
+                <td class="hiragana">にがい</td>
+                <td class="romaji">nigai</td>
+                <td>Amer</td>
+                <td>にがいコーヒー</td>
+            </tr>
+            <tr>
+                <td class="hiragana">あつい</td>
+                <td class="romaji">atsui</td>
+                <td>Chaud (température)</td>
+                <td>あついスープ</td>
+            </tr>
+            <tr>
+                <td class="hiragana">つめたい</td>
+                <td class="romaji">tsumetai</td>
+                <td>Froid</td>
+                <td>つめたいみず</td>
+            </tr>
+        </table>
+
+        <div class="attention">
+            <div class="attention-titre">⚠️ Attention : まずい est impoli !</div>
+            <strong>まずい (mazui)</strong> signifie "mauvais" et est considéré comme assez direct et impoli. Dans une situation polie, utilise plutôt :
+            <ul>
+                <li><strong>あまり おいしくないです</strong> (amari oishikunai desu) = Ce n'est pas très bon</li>
+                <li><strong>ちょっと...</strong> (chotto...) = C'est un peu... (sous-entendu "pas terrible")</li>
+            </ul>
+        </div>
+
+        <div class="grammar-box">
+            <div class="grammar-title">📖 Conjugaison : おいしい (oishii)</div>
+            <table>
+                <tr>
+                    <th>Forme</th>
+                    <th>Japonais</th>
+                    <th>Français</th>
+                </tr>
+                <tr>
+                    <td>Affirmatif présent</td>
+                    <td class="phrase-jp">おいしいです</td>
+                    <td>C'est délicieux</td>
+                </tr>
+                <tr>
+                    <td>Négatif présent</td>
+                    <td class="phrase-jp">おいしく<span class="highlight">ない</span>です</td>
+                    <td>Ce n'est pas bon</td>
+                </tr>
+                <tr>
+                    <td>Affirmatif passé</td>
+                    <td class="phrase-jp">おいし<span class="highlight">かった</span>です</td>
+                    <td>C'était délicieux</td>
+                </tr>
+                <tr>
+                    <td>Négatif passé</td>
+                    <td class="phrase-jp">おいしく<span class="highlight">なかった</span>です</td>
+                    <td>Ce n'était pas bon</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <!-- SECTION 7: VERBES LIÉS À LA NOURRITURE -->
+        <h2>🍴 7. Verbes essentiels</h2>
+
+        <table>
+            <tr>
+                <th>Hiragana (forme dictionnaire)</th>
+                <th>Romaji</th>
+                <th>Forme polie (-ます)</th>
+                <th>Français</th>
+            </tr>
+            <tr>
+                <td class="hiragana">たべる</td>
+                <td class="romaji">taberu</td>
+                <td class="hiragana">たべます</td>
+                <td>Manger</td>
+            </tr>
+            <tr>
+                <td class="hiragana">のむ</td>
+                <td class="romaji">nomu</td>
+                <td class="hiragana">のみます</td>
+                <td>Boire</td>
+            </tr>
+            <tr>
+                <td class="hiragana">つくる</td>
+                <td class="romaji">tsukuru</td>
+                <td class="hiragana">つくります</td>
+                <td>Préparer, faire</td>
+            </tr>
+            <tr>
+                <td class="hiragana">かう</td>
+                <td class="romaji">kau</td>
+                <td class="hiragana">かいます</td>
+                <td>Acheter</td>
+            </tr>
+        </table>
+
+        <div class="grammar-box">
+            <div class="grammar-title">📖 Structure de base avec を (wo/o)</div>
+            <p><strong>Formule :</strong> <span class="highlight">[Objet] を [Verbe]</span></p>
+            <p>La particule <strong>を</strong> indique l'objet direct (ce qu'on mange, boit, etc.)</p>
+            
+            <div class="exemple">
+                <div class="exemple-titre">✏️ Exemples</div>
+                <p class="phrase-jp">ごはんをたべます。</p>
+            <p class="phrase-romaji">Gohan wo tabemasu.</p>
+            <p class="phrase-fr">Je mange du riz.</p>
+                
+                <p class="phrase-jp" style="margin-top: 10px;">みずをのみます。</p>
+                <p class="phrase-fr">Je bois de l'eau.</p>
+                
+                <p class="phrase-jp" style="margin-top: 10px;">カレーをつくります。</p>
+                <p class="phrase-fr">Je prépare du curry.</p>
+            </div>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <!-- SECTION 8: EXPRESSIONS -->
+        <h2>💬 8. Expressions essentielles</h2>
+
+        <h3>🙏 Avant et après le repas</h3>
+        <table>
+            <tr>
+                <th>Hiragana</th>
+                <th>Romaji</th>
+                <th>Français</th>
+                <th>Quand l'utiliser</th>
+            </tr>
+            <tr>
+                <td class="hiragana">いただきます</td>
+                <td class="romaji">itadakimasu</td>
+                <td>Bon appétit</td>
+                <td>AVANT de manger</td>
+            </tr>
+            <tr>
+                <td class="hiragana">ごちそうさまでした</td>
+                <td class="romaji">gochisōsama deshita</td>
+                <td>Merci pour le repas</td>
+                <td>APRÈS avoir mangé</td>
+            </tr>
+        </table>
+
+        <div class="culture-box">
+            <div class="culture-titre">🎌 Culture importante !</div>
+            Au Japon, on dit TOUJOURS <strong>いただきます</strong> avant de manger et <strong>ごちそうさまでした</strong> après. C'est une marque de respect pour la nourriture et ceux qui l'ont préparée. Même si tu manges seul(e) ! 🙏
+        </div>
+
+        <h3>❤️ Exprimer ses préférences</h3>
+        <table>
+            <tr>
+                <th>Hiragana</th>
+                <th>Romaji</th>
+                <th>Français</th>
+            </tr>
+            <tr>
+                <td class="hiragana">すきです</td>
+                <td class="romaji">suki desu</td>
+                <td>J'aime</td>
+            </tr>
+            <tr>
+                <td class="hiragana">だいすきです</td>
+                <td class="romaji">daisuki desu</td>
+                <td>J'adore</td>
+            </tr>
+            <tr>
+                <td class="hiragana">きらいです</td>
+                <td class="romaji">kirai desu</td>
+                <td>Je n'aime pas</td>
+            </tr>
+            <tr>
+                <td class="hiragana">だいきらいです</td>
+                <td class="romaji">daikirai desu</td>
+                <td>Je déteste</td>
+            </tr>
+        </table>
+
+        <div class="grammar-box">
+            <div class="grammar-title">📖 Structure : Exprimer les préférences avec が</div>
+            <p><strong>Formule :</strong> <span class="highlight">[Aliment] が すきです / きらいです</span></p>
+            <p>⚠️ Attention ! On utilise la particule <strong>が</strong> (et pas を) avec すき/きらい !</p>
+            
+            <div class="exemple">
+                <div class="exemple-titre">✏️ Exemples</div>
+                <p class="phrase-jp">すしがすきです。</p>
+            <p class="phrase-romaji">Sushi ga suki desu.</p>
+            <p class="phrase-fr">J'aime les sushis.</p>
+                
+                <p class="phrase-jp" style="margin-top: 10px;">ラーメンがだいすきです！</p>
+                <p class="phrase-fr">J'adore les ramen !</p>
+                
+                <p class="phrase-jp" style="margin-top: 10px;">にんじんがきらいです。</p>
+                <p class="phrase-fr">Je n'aime pas les carottes.</p>
+            </div>
+        </div>
+
+        <h3>🤔 Poser des questions</h3>
+        <table>
+            <tr>
+                <th>Hiragana</th>
+                <th>Romaji</th>
+                <th>Français</th>
+            </tr>
+            <tr>
+                <td class="hiragana">なにをたべますか。</td>
+                <td class="romaji">nani wo tabemasu ka</td>
+                <td>Qu'est-ce que tu manges ?</td>
+            </tr>
+            <tr>
+                <td class="hiragana">なにがすきですか。</td>
+                <td class="romaji">nani ga suki desu ka</td>
+                <td>Qu'est-ce que tu aimes ?</td>
+            </tr>
+            <tr>
+                <td class="hiragana">おいしいですか。</td>
+                <td class="romaji">oishii desu ka</td>
+                <td>C'est bon ?</td>
+            </tr>
+            <tr>
+                <td class="hiragana">これはなんですか。</td>
+                <td class="romaji">kore wa nan desu ka</td>
+                <td>Qu'est-ce que c'est ?</td>
+            </tr>
+        </table>
+
+        <div class="section-divider"></div>
+
+        <!-- SECTION 9: AU RESTAURANT -->
+        <h2>🍽️ 9. Au restaurant</h2>
+
+        <h3>📝 Commander</h3>
+        <table>
+            <tr>
+                <th>Hiragana</th>
+                <th>Romaji</th>
+                <th>Français</th>
+            </tr>
+            <tr>
+                <td class="hiragana">メニュー</td>
+                <td class="romaji">menyū</td>
+                <td>Menu</td>
+            </tr>
+            <tr>
+                <td class="hiragana">ちゅうもん</td>
+                <td class="romaji">chūmon</td>
+                <td>Commande</td>
+            </tr>
+            <tr>
+                <td class="hiragana">すみません</td>
+                <td class="romaji">sumimasen</td>
+                <td>Excusez-moi (pour appeler)</td>
+            </tr>
+            <tr>
+                <td class="hiragana">これをください</td>
+                <td class="romaji">kore wo kudasai</td>
+                <td>Je voudrais ceci</td>
+            </tr>
+            <tr>
+                <td class="hiragana">おかいけい</td>
+                <td class="romaji">okaikei</td>
+                <td>L'addition</td>
+            </tr>
+        </table>
+
+        <div class="exemple">
+            <div class="exemple-titre">💬 Dialogue au restaurant</div>
+            <table style="margin-top: 10px;">
+                <tr>
+                    <td style="width: 30%;"><strong>Serveur:</strong></td>
+                    <td>
+                        <p class="phrase-jp">いらっしゃいませ！</p>
+            <p class="phrase-romaji">Irasshaimase!</p>
+            <p class="phrase-fr" style="margin: 0;">Bienvenue !</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Vous:</strong></td>
+                    <td>
+                        <p class="phrase-jp">メニューをください。</p>
+            <p class="phrase-romaji">Menyū wo kudasai.</p>
+            <p class="phrase-fr" style="margin: 0;">Le menu, s'il vous plaît.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Serveur:</strong></td>
+                    <td>
+                        <p class="phrase-jp">はい、どうぞ。</p>
+            <p class="phrase-romaji">Hai, dōzo.</p>
+            <p class="phrase-fr" style="margin: 0;">Oui, voici.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Vous:</strong></td>
+                    <td>
+                        <p class="phrase-jp">すみません。ラーメンをください。</p>
+            <p class="phrase-romaji">Sumimasen. Rāmen wo kudasai.</p>
+            <p class="phrase-fr" style="margin: 0;">Excusez-moi. Un ramen, s'il vous plaît.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Serveur:</strong></td>
+                    <td>
+                        <p class="phrase-jp">かしこまりました。</p>
+            <p class="phrase-romaji">Kashikomarimashita.</p>
+            <p class="phrase-fr" style="margin: 0;">Bien compris.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="padding-top: 15px;"><em>Après avoir mangé...</em></td>
+                </tr>
+                <tr>
+                    <td><strong>Vous:</strong></td>
+                    <td>
+                        <p class="phrase-jp">ごちそうさまでした。おかいけいをおねがいします。</p>
+            <p class="phrase-romaji">Gochisōsama deshita. Okaikei wo onegaishimasu.</p>
+            <p class="phrase-fr" style="margin: 0;">Merci pour le repas. L'addition, s'il vous plaît.</p>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <!-- SECTION 10: EXEMPLES PRATIQUES -->
+        <h2>💬 10. Phrases pratiques complètes</h2>
+
+        <div class="exemple">
+            <div class="exemple-titre">✏️ Parler de ses repas</div>
+            <p class="phrase-jp">あさごはんにパンをたべます。</p>
+            <p class="phrase-romaji">Asagohan ni pan wo tabemasu.</p>
+            <p class="phrase-fr">Je mange du pain au petit-déjeuner.</p>
+            
+            <p class="phrase-jp" style="margin-top: 10px;">ひるごはんはべんとうです。</p>
+            <p class="phrase-fr">Mon déjeuner, c'est un bento.</p>
+            
+            <p class="phrase-jp" style="margin-top: 10px;">ばんごはんにカレーをつくります。</p>
+            <p class="phrase-fr">Je prépare du curry pour le dîner.</p>
+        </div>
+
+        <div class="exemple">
+            <div class="exemple-titre">✏️ Exprimer ses goûts</div>
+            <p class="phrase-jp">すしがだいすきです！</p>
+            <p class="phrase-romaji">Sushi ga daisuki desu!</p>
+            <p class="phrase-fr">J'adore les sushis !</p>
+            
+            <p class="phrase-jp" style="margin-top: 10px;">からいたべものがすきです。</p>
+            <p class="phrase-fr">J'aime la nourriture épicée.</p>
+            
+            <p class="phrase-jp" style="margin-top: 10px;">やさいはあまりすきじゃないです。</p>
+            <p class="phrase-fr">Je n'aime pas trop les légumes.</p>
+        </div>
+
+        <div class="exemple">
+            <div class="exemple-titre">✏️ Décrire un plat</div>
+            <p class="phrase-jp">このラーメンはとてもおいしいです。</p>
+            <p class="phrase-romaji">Kono rāmen wa totemo oishii desu.</p>
+            <p class="phrase-fr">Ce ramen est très délicieux.</p>
+            
+            <p class="phrase-jp" style="margin-top: 10px;">でも、すこしからいです。</p>
+            <p class="phrase-fr">Mais c'est un peu épicé.</p>
+            
+            <p class="phrase-jp" style="margin-top: 10px;">スープはあついです。</p>
+            <p class="phrase-fr">La soupe est chaude.</p>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <!-- SECTION 11: EXERCICES -->
+        <h2>✏️ 11. Exercices pratiques</h2>
+
+        <div class="exercice">
+            <div class="exercice-titre">📝 Exercice 1 : Traduis en japonais</div>
+            <ol>
+                <li>J'aime les sushis.</li>
+                <li>Je mange du riz.</li>
+                <li>Ce café est délicieux.</li>
+                <li>Je n'aime pas les carottes.</li>
+                <li>L'eau est froide.</li>
+            </ol>
+        </div>
+
+        <div class="exercice">
+            <div class="exercice-titre">📝 Exercice 2 : Complète avec が ou を</div>
+            <ol>
+                <li>ラーメン＿＿たべます。</li>
+                <li>みず＿＿のみます。</li>
+                <li>すし＿＿すきです。</li>
+                <li>やさい＿＿きらいです。</li>
+                <li>カレー＿＿つくります。</li>
+            </ol>
+        </div>
+
+        <div class="exercice">
+            <div class="exercice-titre">📝 Exercice 3 : Réponds aux questions</div>
+            <ol>
+                <li>なにがすきですか。(Qu'est-ce que tu aimes ?)</li>
+                <li>あさごはんになにをたべますか。(Qu'est-ce que tu manges au petit-déjeuner ?)</li>
+                <li>コーヒーがすきですか。(Aimes-tu le café ?)</li>
+            </ol>
+        </div>
+
+        <div class="exercice">
+            <div class="exercice-titre">📝 Exercice 4 : Mets au passé</div>
+            <ol>
+                <li>おいしいです → ＿＿＿＿＿＿＿</li>
+                <li>ラーメンをたべます → ＿＿＿＿＿＿＿</li>
+                <li>みずをのみます → ＿＿＿＿＿＿＿</li>
+                <li>からいです → ＿＿＿＿＿＿＿</li>
+            </ol>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <!-- SECTION 12: ASTUCES JLPT N5 -->
+        <h2>🎯 12. Astuces pour le JLPT N5</h2>
+
+        <div class="astuce">
+            <div class="astuce-titre">💡 Vocabulaire prioritaire</div>
+            <strong>Les mots ESSENTIELS à connaître absolument :</strong>
+            <ul>
+                <li><strong>Repas :</strong> あさごはん, ひるごはん, ばんごはん</li>
+                <li><strong>Aliments :</strong> ごはん, パン, にく, さかな, やさい, くだもの</li>
+                <li><strong>Boissons :</strong> みず, おちゃ, コーヒー</li>
+                <li><strong>Adjectifs :</strong> おいしい, あまい, からい</li>
+                <li><strong>Verbes :</strong> たべます, のみます</li>
+                <li><strong>Expressions :</strong> いただきます, ごちそうさまでした</li>
+            </ul>
+        </div>
+
+        <div class="astuce">
+            <div class="astuce-titre">💡 Pièges à éviter</div>
+            <ul>
+                <li>❌ すし<strong>を</strong>すきです → ✅ すし<strong>が</strong>すきです</li>
+                <li>❌ たべる → ✅ たべます (forme polie au JLPT N5)</li>
+                <li>Ne confonds pas <strong>からい</strong> (épicé) et <strong>からだ</strong> (corps) !</li>
+                <li><strong>ごはん</strong> = repas OU riz (selon le contexte)</li>
+            </ul>
+        </div>
+
+        <div class="astuce">
+            <div class="astuce-titre">💡 Stratégie de mémorisation</div>
+            <ul>
+                <li><strong>Associe les aliments à tes goûts personnels :</strong> Fais des phrases sur ce que TU aimes vraiment !</li>
+                <li><strong>Pratique au restaurant japonais :</strong> Essaie de commander en japonais !</li>
+                <li><strong>Regarde des vidéos de cuisine japonaise</strong> pour voir le vocabulaire en contexte</li>
+                <li><strong>Fais des listes par catégories</strong> (viandes, légumes, fruits) et révise-les régulièrement</li>
+            </ul>
+        </div>
+
+        <div class="culture-box">
+            <div class="culture-titre">🎌 Petit conseil culturel</div>
+            Quand tu visites le Japon, n'hésite pas à essayer la nourriture locale ! Les Japonais apprécient beaucoup quand les étrangers s'intéressent à leur cuisine. Et si tu dis <strong>おいしい！</strong> (oishii) avec un grand sourire, tu feras plaisir à tout le monde ! 😊🍱
+        </div>
+
+        <div class="section-divider"></div>
+
+        <!-- FOOTER -->
+        <div style="text-align: center; margin-top: 40px; padding: 20px; background: #fff3e0; border-radius: 10px;">
+            <h3 style="color: #d32f2f; margin-bottom: 10px;">🎌 がんばって！(Ganbatte!)</h3>
+            <p style="color: #666; font-style: italic;">Bon courage pour tes révisions du JLPT N5 !</p>
+            <p style="color: #666; margin-top: 10px;">🍜 いただきます！</p>
+            <p style="color: #666; margin-top: 15px;">📅 Leçon créée le 28 janvier 2026</p>
+            <p style="color: #666;">👨‍🏫 Par ton professeur de japonais Claude</p>
+        </div>
+
+    </div>
+</body>
+</html>
