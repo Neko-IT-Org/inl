@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>⏰ Les Heures - HSK1 & HSK2</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            padding: 20px;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .logo {
+            width: 100px;
+            height: 100px;
+            background: white;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 50px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .subtitle {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+        }
+        
+        h2 {
+            color: #f5576c;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #fbc2eb;
+        }
+        
+        h3 {
+            color: #a6c1ee;
+            font-size: 1.4em;
+            margin: 25px 0 15px 0;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        th {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-size: 1.1em;
+        }
+        
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        tr:hover {
+            background: #fff0f5;
+        }
+        
+        .hanzi {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #f5576c;
+        }
+        
+        .pinyin {
+            color: #f093fb;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        
+        .french {
+            color: #555;
+        }
+        
+        .tip-box {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+            border-left: 5px solid #f5576c;
+        }
+        
+        .tip-box h4 {
+            color: #d63447;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+        
+        .exercise-box {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+            border-left: 5px solid #f5576c;
+        }
+        
+        .exercise-box h4 {
+            color: #5f27cd;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+        
+        .example {
+            background: #fff0f5;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 10px 0;
+            border-left: 4px solid #fbc2eb;
+        }
+        
+        .clock-display {
+            background: white;
+            border: 5px solid #f093fb;
+            border-radius: 50%;
+            width: 200px;
+            height: 200px;
+            margin: 20px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2em;
+            font-weight: bold;
+            color: #f5576c;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .time-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .time-card {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .time-card .time {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #f5576c;
+            margin-bottom: 5px;
+        }
+        
+        .time-card .chinese {
+            color: #f093fb;
+            font-weight: bold;
+            margin: 5px 0;
+        }
+        
+        .highlight {
+            background: #fff3cd;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        
+        ul, ol {
+            margin-left: 30px;
+            margin-top: 10px;
+        }
+        
+        li {
+            margin: 8px 0;
+        }
+        
+        .footer {
+            background: #f5576c;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 1.1em;
+        }
+        
+        .period {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            padding: 15px;
+            border-radius: 10px;
+            margin: 10px 0;
+        }
+        
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            .container {
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">⏰</div>
+            <h1>⏰ Les Heures 时间</h1>
+            <p class="subtitle">HSK1 & HSK2 • Fiche de révision pour Lucie</p>
+        </div>
+        
+        <div class="content">
+            <div class="section">
+                <h2>🕐 Vocabulaire de base pour l'heure</h2>
+                <table>
+                    <tr>
+                        <th>汉字 Hanzi</th>
+                        <th>Pinyin</th>
+                        <th>Français</th>
+                        <th>Exemple</th>
+                    </tr>
+                    <tr>
+                        <td class="hanzi">点</td>
+                        <td class="pinyin">diǎn</td>
+                        <td class="french">heure (o'clock)</td>
+                        <td>三点 sān diǎn (3h)</td>
+                    </tr>
+                    <tr>
+                        <td class="hanzi">分</td>
+                        <td class="pinyin">fēn</td>
+                        <td class="french">minute</td>
+                        <td>十分 shí fēn (10 minutes)</td>
+                    </tr>
+                    <tr>
+                        <td class="hanzi">半</td>
+                        <td class="pinyin">bàn</td>
+                        <td class="french">demi, et demie</td>
+                        <td>三点半 sān diǎn bàn (3h30)</td>
+                    </tr>
+                    <tr>
+                        <td class="hanzi">刻</td>
+                        <td class="pinyin">kè</td>
+                        <td class="french">quart d'heure</td>
+                        <td>一刻 yí kè (15 minutes)</td>
+                    </tr>
+                    <tr>
+                        <td class="hanzi">差</td>
+                        <td class="pinyin">chà</td>
+                        <td class="french">moins</td>
+                        <td>差十分八点 (8h moins 10)</td>
+                    </tr>
+                    <tr>
+                        <td class="hanzi">现在</td>
+                        <td class="pinyin">xiànzài</td>
+                        <td class="french">maintenant</td>
+                        <td>现在几点？(Quelle heure ?)</td>
+                    </tr>
+                    <tr>
+                        <td class="hanzi">几点</td>
+                        <td class="pinyin">jǐ diǎn</td>
+                        <td class="french">quelle heure ?</td>
+                        <td>几点？jǐ diǎn? (Quelle heure ?)</td>
+                    </tr>
+                    <tr>
+                        <td class="hanzi">时间</td>
+                        <td class="pinyin">shíjiān</td>
+                        <td class="french">temps, heure</td>
+                        <td>HSK2</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="tip-box">
+                <h4>💡 Structure de base : NOMBRE + 点 (diǎn)</h4>
+                <p><strong>点 diǎn</strong> est l'équivalent de "heure(s)" ou "o'clock" en anglais</p>
+                <div class="example">
+                    <p>一点 yī diǎn = 1h</p>
+                    <p>三点 sān diǎn = 3h</p>
+                    <p>十二点 shí'èr diǎn = 12h</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>🕐 Les heures pleines</h2>
+                <div class="time-grid">
+                    <div class="time-card">
+                        <div class="time">1:00</div>
+                        <div class="chinese">一点 yī diǎn</div>
+                    </div>
+                    <div class="time-card">
+                        <div class="time">2:00</div>
+                        <div class="chinese">两点 liǎng diǎn</div>
+                        <small>⚠️ On dit 两 liǎng, pas 二 èr</small>
+                    </div>
+                    <div class="time-card">
+                        <div class="time">3:00</div>
+                        <div class="chinese">三点 sān diǎn</div>
+                    </div>
+                    <div class="time-card">
+                        <div class="time">4:00</div>
+                        <div class="chinese">四点 sì diǎn</div>
+                    </div>
+                    <div class="time-card">
+                        <div class="time">5:00</div>
+                        <div class="chinese">五点 wǔ diǎn</div>
+                    </div>
+                    <div class="time-card">
+                        <div class="time">6:00</div>
+                        <div class="chinese">六点 liù diǎn</div>
+                    </div>
+                    <div class="time-card">
+                        <div class="time">7:00</div>
+                        <div class="chinese">七点 qī diǎn</div>
+                    </div>
+                    <div class="time-card">
+                        <div class="time">8:00</div>
+                        <div class="chinese">八点 bā diǎn</div>
+                    </div>
+                    <div class="time-card">
+                        <div class="time">9:00</div>
+                        <div class="chinese">九点 jiǔ diǎn</div>
+                    </div>
+                    <div class="time-card">
+                        <div class="time">10:00</div>
+                        <div class="chinese">十点 shí diǎn</div>
+                    </div>
+                    <div class="time-card">
+                        <div class="time">11:00</div>
+                        <div class="chinese">十一点 shíyī diǎn</div>
+                    </div>
+                    <div class="time-card">
+                        <div class="time">12:00</div>
+                        <div class="chinese">十二点 shí'èr diǎn</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tip-box">
+                <h4>⚠️ ATTENTION : 两点 (liǎng diǎn) pas 二点 !</h4>
+                <p>Pour 2 heures, on utilise <span class="highlight">两 liǎng</span> et non 二 èr</p>
+                <p><strong>✅ Correct :</strong> 两点 liǎng diǎn (2h)</p>
+                <p><strong>❌ Incorrect :</strong> 二点 èr diǎn</p>
+                <p style="margin-top: 10px;"><em>Mais pour 12h, on dit bien 十二点 shí'èr diǎn (car 二 fait partie de 十二)</em></p>
+            </div>
+
+            <div class="section">
+                <h2>⏰ Les minutes : HEURE + 点 + MINUTES + 分</h2>
+                <table>
+                    <tr>
+                        <th>Heure</th>
+                        <th>汉字 Hanzi</th>
+                        <th>Pinyin</th>
+                    </tr>
+                    <tr>
+                        <td>3:05</td>
+                        <td class="hanzi">三点零五分</td>
+                        <td class="pinyin">sān diǎn líng wǔ fēn</td>
+                    </tr>
+                    <tr>
+                        <td>3:10</td>
+                        <td class="hanzi">三点十分</td>
+                        <td class="pinyin">sān diǎn shí fēn</td>
+                    </tr>
+                    <tr>
+                        <td>3:15</td>
+                        <td class="hanzi">三点十五分 / 三点一刻</td>
+                        <td class="pinyin">sān diǎn shíwǔ fēn / sān diǎn yí kè</td>
+                    </tr>
+                    <tr>
+                        <td>3:20</td>
+                        <td class="hanzi">三点二十分</td>
+                        <td class="pinyin">sān diǎn èrshí fēn</td>
+                    </tr>
+                    <tr>
+                        <td>3:25</td>
+                        <td class="hanzi">三点二十五分</td>
+                        <td class="pinyin">sān diǎn èrshíwǔ fēn</td>
+                    </tr>
+                    <tr>
+                        <td>3:30</td>
+                        <td class="hanzi">三点三十分 / 三点半</td>
+                        <td class="pinyin">sān diǎn sānshí fēn / sān diǎn bàn</td>
+                    </tr>
+                    <tr>
+                        <td>3:45</td>
+                        <td class="hanzi">三点四十五分 / 三点三刻 / 差一刻四点</td>
+                        <td class="pinyin">sān diǎn sìshíwǔ fēn / sān diǎn sān kè / chà yí kè sì diǎn</td>
+                    </tr>
+                    <tr>
+                        <td>3:50</td>
+                        <td class="hanzi">三点五十分 / 差十分四点</td>
+                        <td class="pinyin">sān diǎn wǔshí fēn / chà shí fēn sì diǎn</td>
+                    </tr>
+                    <tr>
+                        <td>3:55</td>
+                        <td class="hanzi">三点五十五分 / 差五分四点</td>
+                        <td class="pinyin">sān diǎn wǔshíwǔ fēn / chà wǔ fēn sì diǎn</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="tip-box">
+                <h4>🎯 Raccourcis pratiques !</h4>
+                <p><strong>半 bàn</strong> = et demie (30 minutes)</p>
+                <p class="example">三点半 sān diǎn bàn = 3h30</p>
+                
+                <p style="margin-top: 15px;"><strong>刻 kè</strong> = quart d'heure (15 minutes)</p>
+                <p class="example">三点一刻 sān diǎn yí kè = 3h15</p>
+                
+                <p style="margin-top: 15px;"><strong>差 chà</strong> = moins (pour les heures proches de l'heure pleine)</p>
+                <p class="example">差五分四点 chà wǔ fēn sì diǎn = 4h moins 5 (3h55)</p>
+                
+                <p style="margin-top: 15px; color: #d63447;"><strong>Note :</strong> Pour 0-9 minutes, ajoute 零 líng (zéro) :<br>
+                三点零五分 sān diǎn líng wǔ fēn (3h05)</p>
+            </div>
+
+            <div class="section">
+                <h2>🌅 Les moments de la journée</h2>
+                <table>
+                    <tr>
+                        <th>汉字 Hanzi</th>
+                        <th>Pinyin</th>
+                        <th>Français</th>
+                        <th>Période</th>
+                    </tr>
+                    <tr>
+                        <td class="hanzi">早上</td>
+                        <td class="pinyin">zǎoshang</td>
+                        <td class="french">matin</td>
+                        <td>6h-9h</td>
+                    </tr>
+                    <tr>
+                        <td class="hanzi">上午</td>
+                        <td class="pinyin">shàngwǔ</td>
+                        <td class="french">matinée</td>
+                        <td>9h-12h</td>
+                    </tr>
+                    <tr>
+                        <td class="hanzi">中午</td>
+                        <td class="pinyin">zhōngwǔ</td>
+                        <td class="french">midi</td>
+                        <td>12h-13h</td>
+                    </tr>
+                    <tr>
+                        <td class="hanzi">下午</td>
+                        <td class="pinyin">xiàwǔ</td>
+                        <td class="french">après-midi</td>
+                        <td>13h-18h</td>
+                    </tr>
+                    <tr>
+                        <td class="hanzi">晚上</td>
+                        <td class="pinyin">wǎnshang</td>
+                        <td class="french">soir</td>
+                        <td>18h-23h</td>
+                    </tr>
+                    <tr>
+                        <td class="hanzi">夜里 / 半夜</td>
+                        <td class="pinyin">yèlǐ / bànyè</td>
+                        <td class="french">nuit / minuit</td>
+                        <td>23h-6h</td>
+                    </tr>
+                </table>
+
+                <h3>✨ Comment les utiliser ?</h3>
+                <p style="margin: 15px 0;">Structure : <span class="highlight">Moment + Heure</span></p>
+                <div class="example">
+                    <p>早上八点 zǎoshang bā diǎn = 8h du matin</p>
+                    <p>下午三点 xiàwǔ sān diǎn = 15h (3h de l'après-midi)</p>
+                    <p>晚上七点半 wǎnshang qī diǎn bàn = 19h30 (7h30 du soir)</p>
+                </div>
+            </div>
+
+            <div class="period">
+                <h4 style="color: #f5576c; margin-bottom: 10px;">🕐 Système 12h vs 24h</h4>
+                <p>En Chine, on utilise souvent le <strong>système 24h</strong> comme en Belgique !</p>
+                <p style="margin-top: 10px;"><strong>Mais attention :</strong> Dans la conversation courante, on ajoute les moments de la journée pour clarifier :</p>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 15px;">
+                    <div>
+                        <strong style="color: #f5576c;">Système 24h (formel) :</strong>
+                        <p>十四点 shísì diǎn (14h)</p>
+                        <p>十九点 shíjiǔ diǎn (19h)</p>
+                    </div>
+                    <div>
+                        <strong style="color: #f5576c;">Système conversationnel :</strong>
+                        <p>下午两点 xiàwǔ liǎng diǎn (2h PM)</p>
+                        <p>晚上七点 wǎnshang qī diǎn (7h PM)</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>💬 Questions et réponses sur l'heure</h2>
+                <div class="example">
+                    <p><strong>Q:</strong> 现在几点？<br>
+                    <span class="pinyin">Xiànzài jǐ diǎn?</span><br>
+                    <em>Quelle heure est-il maintenant ?</em></p>
+                    
+                    <p style="margin-top: 10px;"><strong>R:</strong> 现在三点半。<br>
+                    <span class="pinyin">Xiànzài sān diǎn bàn.</span><br>
+                    <em>Il est 3h30 maintenant.</em></p>
+                </div>
+
+                <div class="example">
+                    <p><strong>Q:</strong> 你几点上班？<br>
+                    <span class="pinyin">Nǐ jǐ diǎn shàngbān?</span><br>
+                    <em>À quelle heure commences-tu le travail ?</em></p>
+                    
+                    <p style="margin-top: 10px;"><strong>R:</strong> 我早上八点上班。<br>
+                    <span class="pinyin">Wǒ zǎoshang bā diǎn shàngbān.</span><br>
+                    <em>Je commence le travail à 8h du matin.</em></p>
+                </div>
+
+                <div class="example">
+                    <p><strong>Q:</strong> 你几点下班？<br>
+                    <span class="pinyin">Nǐ jǐ diǎn xiàbān?</span><br>
+                    <em>À quelle heure finis-tu le travail ?</em></p>
+                    
+                    <p style="margin-top: 10px;"><strong>R:</strong> 我下午五点下班。<br>
+                    <span class="pinyin">Wǒ xiàwǔ wǔ diǎn xiàbān.</span><br>
+                    <em>Je finis le travail à 17h.</em></p>
+                </div>
+
+                <div class="example">
+                    <p><strong>Q:</strong> 现在几点了？<br>
+                    <span class="pinyin">Xiànzài jǐ diǎn le?</span><br>
+                    <em>Quelle heure est-il maintenant ? (insistance avec 了)</em></p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>📱 Phrases pratiques pour ton quotidien</h2>
+                <div class="example">
+                    <p><strong>1.</strong> 我早上七点起床。<br>
+                    <span class="pinyin">Wǒ zǎoshang qī diǎn qǐchuáng.</span><br>
+                    <em>Je me lève à 7h du matin.</em></p>
+                </div>
+                <div class="example">
+                    <p><strong>2.</strong> 我八点去上班。<br>
+                    <span class="pinyin">Wǒ bā diǎn qù shàngbān.</span><br>
+                    <em>Je vais au travail à 8h.</em></p>
+                </div>
+                <div class="example">
+                    <p><strong>3.</strong> 中午十二点吃午饭。<br>
+                    <span class="pinyin">Zhōngwǔ shí'èr diǎn chī wǔfàn.</span><br>
+                    <em>Je mange le déjeuner à midi.</em></p>
+                </div>
+                <div class="example">
+                    <p><strong>4.</strong> 下午六点做运动。<br>
+                    <span class="pinyin">Xiàwǔ liù diǎn zuò yùndòng.</span><br>
+                    <em>Je fais du sport à 18h.</em> (Ton crossfit !)</p>
+                </div>
+                <div class="example">
+                    <p><strong>5.</strong> 晚上十点睡觉。<br>
+                    <span class="pinyin">Wǎnshang shí diǎn shuìjiào.</span><br>
+                    <em>Je me couche à 22h.</em></p>
+                </div>
+                <div class="example">
+                    <p><strong>6.</strong> 对不起，我来晚了。<br>
+                    <span class="pinyin">Duìbuqǐ, wǒ lái wǎn le.</span><br>
+                    <em>Désolé(e), je suis en retard.</em></p>
+                </div>
+                <div class="example">
+                    <p><strong>7.</strong> 我们三点见面吧。<br>
+                    <span class="pinyin">Wǒmen sān diǎn jiànmiàn ba.</span><br>
+                    <em>On se voit à 3h ?</em></p>
+                </div>
+                <div class="example">
+                    <p><strong>8.</strong> 还有时间吗？<br>
+                    <span class="pinyin">Hái yǒu shíjiān ma?</span><br>
+                    <em>Il reste du temps ?</em></p>
+                </div>
+            </div>
+
+            <div class="tip-box">
+                <h4>🔊 Attention aux tons !</h4>
+                <p><strong>点 diǎn</strong> (heure) - 3ème ton</p>
+                <p><strong>分 fēn</strong> (minute) - 1er ton</p>
+                <p><strong>半 bàn</strong> (et demie) - 4ème ton</p>
+                <p><strong>刻 kè</strong> (quart) - 4ème ton</p>
+                <p style="margin-top: 15px; color: #d63447;"><strong>Piège :</strong> 几点 jǐ diǎn (quelle heure ?) - Les deux sont 3ème ton mais 几 change de ton à cause de 点 !</p>
+            </div>
+
+            <div class="exercise-box">
+                <h4>✍️ Exercices pratiques</h4>
+                
+                <p><strong>Exercice 1 :</strong> Écris ces heures en chinois (pinyin + hanzi)</p>
+                <ol>
+                    <li>8h : _____________________</li>
+                    <li>3h30 : _____________________</li>
+                    <li>10h15 : _____________________</li>
+                    <li>6h45 : _____________________</li>
+                    <li>2h05 : _____________________</li>
+                    <li>7h du soir : _____________________</li>
+                </ol>
+                
+                <p style="margin-top: 20px;"><strong>Exercice 2 :</strong> Traduis en français</p>
+                <ol>
+                    <li>现在几点？_____________________</li>
+                    <li>早上七点半 _____________________</li>
+                    <li>差十分九点 _____________________</li>
+                    <li>下午三点一刻 _____________________</li>
+                </ol>
+
+                <p style="margin-top: 20px;"><strong>Exercice 3 :</strong> Décris ta journée en chinois !</p>
+                <p><em>Dis à quelle heure tu te lèves, vas au travail, manges, fais du sport, te couches...</em></p>
+                <p>À toi ! → _________________________________________________</p>
+            </div>
+
+            <div class="tip-box">
+                <h4>🎓 Astuces de mémorisation</h4>
+                <ul>
+                    <li><strong>Horloge mentale :</strong> Regarde l'heure et dis-la systématiquement en chinois !</li>
+                    <li><strong>Routine quotidienne :</strong> Associe chaque activité à son heure en chinois</li>
+                    <li><strong>Crossfit :</strong> Chronomètre tes WODs en chinois ! (三分钟 sān fēnzhōng = 3 minutes)</li>
+                    <li><strong>Rendez-vous :</strong> Prends tes RDV en pensant à l'heure en chinois</li>
+                    <li><strong>Alarmes :</strong> Nomme tes alarmes en chinois sur ton téléphone !</li>
+                    <li><strong>Lecture :</strong> Note combien de temps tu lis en chinois</li>
+                </ul>
+            </div>
+
+            <div class="tip-box" style="background: linear-gradient(135deg, #d299c2 0%, #fef9d7 100%);">
+                <h4>🌸 Note culturelle : La ponctualité en Chine</h4>
+                <ul>
+                    <li><strong>Contexte professionnel :</strong> La ponctualité est TRÈS importante ! Arriver en retard est mal vu.</li>
+                    <li><strong>Rendez-vous sociaux :</strong> Plus flexible, mais prévenir si on est en retard est apprécié</li>
+                    <li><strong>Horaires de repas :</strong> 
+                        <br>• Petit-déjeuner : 7h-8h
+                        <br>• Déjeuner : 12h-13h (souvent la sieste après !)
+                        <br>• Dîner : 18h-19h (plus tôt qu'en Belgique)
+                    </li>
+                    <li><strong>Expression utile :</strong> 时间就是金钱 shíjiān jiùshì jīnqián (Le temps, c'est de l'argent !)</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>✨ Magnifique progression Lucie ! 加油！(Jiāyóu!) ✨</p>
+            <p>Le temps maîtrisé, c'est une vie organisée ! ⏰🎯</p>
+        </div>
+    </div>
+</body>
+</html>

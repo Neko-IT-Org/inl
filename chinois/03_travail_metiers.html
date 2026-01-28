@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💼 Le Travail et les Métiers - HSK1 & HSK2</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .logo {
+            width: 100px;
+            height: 100px;
+            background: white;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 50px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .subtitle {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+        }
+        
+        h2 {
+            color: #4facfe;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #00f2fe;
+        }
+        
+        h3 {
+            color: #667eea;
+            font-size: 1.4em;
+            margin: 25px 0 15px 0;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-size: 1.1em;
+        }
+        
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        tr:hover {
+            background: #f0f7ff;
+        }
+        
+        .hanzi {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #4facfe;
+        }
+        
+        .pinyin {
+            color: #667eea;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        
+        .french {
+            color: #555;
+        }
+        
+        .tip-box {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+            border-left: 5px solid #4facfe;
+        }
+        
+        .tip-box h4 {
+            color: #d63447;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+        
+        .exercise-box {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+            border-left: 5px solid #667eea;
+        }
+        
+        .exercise-box h4 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+        
+        .example {
+            background: #f0f7ff;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 10px 0;
+            border-left: 4px solid #00f2fe;
+        }
+        
+        .category {
+            background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);
+            padding: 15px;
+            border-radius: 10px;
+            margin: 15px 0;
+            font-weight: bold;
+            color: #5f27cd;
+            text-align: center;
+        }
+        
+        .highlight {
+            background: #fff3cd;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        
+        .medical {
+            background: #ffe5e5;
+            border-left: 4px solid #ff6b6b;
+        }
+        
+        ul, ol {
+            margin-left: 30px;
+            margin-top: 10px;
+        }
+        
+        li {
+            margin: 8px 0;
+        }
+        
+        .footer {
+            background: #4facfe;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 1.1em;
+        }
+        
+        .emoji {
+            font-size: 1.3em;
+        }
+        
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            .container {
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">💼</div>
+            <h1>💼 Le Travail et les Métiers 工作</h1>
+            <p class="subtitle">HSK1 & HSK2 • Fiche de révision pour Lucie</p>
+        </div>
+        
+        <div class="content">
+            <div class="section">
+                <h2>🏢 Vocabulaire de base sur le travail</h2>
+                <table>
+                    <tr>
+                        <th>汉字 Hanzi</th>
+                        <th>Pinyin</th>
+                        <th>Français</th>
+                        <th>Note</th>
+                    </tr>
+                    <tr>
+                        <td class="hanzi">工作</td>
+                        <td class="pinyin">gōngzuò</td>
+                        <td class="french">travail, travailler</td>
+                        <td>verbe et nom</td>
+                    </tr>
+                    <tr>
+                        <td class="hanzi">做</td>
+                        <td class="pinyin">zuò</td>
+                        <td class="french">faire</td>
+                        <td>做什么工作 (quel travail faire)</td>
+                    </tr>
+                    <tr>
+                        <td class="hanzi">学习</td>
+                        <td class="pinyin">xuéxí</td>
+                        <td class="french">étudier, apprendre</td>
+                        <td>verbe</td>
+                    </tr>
+                    <tr>
+                        <td class="hanzi">上班</td>
+                        <td class="pinyin">shàngbān</td>
+                        <td class="french">aller au travail</td>
+                        <td>HSK2</td>
+                    </tr>
+                    <tr>
+                        <td class="hanzi">下班</td>
+                        <td class="pinyin">xiàbān</td>
+                        <td class="french">finir le travail</td>
+                        <td>HSK2</td>
+                    </tr>
+                    <tr>
+                        <td class="hanzi">休息</td>
+                        <td class="pinyin">xiūxi</td>
+                        <td class="french">se reposer</td>
+                        <td>HSK2</td>
+                    </tr>
+                    <tr>
+                        <td class="hanzi">忙</td>
+                        <td class="pinyin">máng</td>
+                        <td class="french">occupé</td>
+                        <td>adjectif</td>
+                    </tr>
+                    <tr>
+                        <td class="hanzi">累</td>
+                        <td class="pinyin">lèi</td>
+                        <td class="french">fatigué</td>
+                        <td>HSK2</td>
+                    </tr>
+                    <tr>
+                        <td class="hanzi">公司</td>
+                        <td class="pinyin">gōngsī</td>
+                        <td class="french">entreprise</td>
+                        <td>HSK2</td>
+                    </tr>
+                    <tr>
+                        <td class="hanzi">办公室</td>
+                        <td class="pinyin">bàngōngshì</td>
+                        <td class="french">bureau</td>
+                        <td>HSK2</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="category">
+                <h3 style="color: white; margin: 0;">👨‍⚕️ MÉTIERS DE LA SANTÉ - Spécial pour toi Lucie ! 🏥</h3>
+            </div>
+
+            <div class="section">
+                <table>
+                    <tr>
+                        <th>汉字 Hanzi</th>
+                        <th>Pinyin</th>
+                        <th>Français</th>
+                        <th>Note</th>
+                    </tr>
+                    <tr class="medical">
+                        <td class="hanzi">医生</td>
+                        <td class="pinyin">yīshēng</td>
+                        <td class="french">médecin</td>
+                        <td>HSK1 ⭐</td>
+                    </tr>
+                    <tr class="medical">
+                        <td class="hanzi">护士</td>
+                        <td class="pinyin">hùshi</td>
+                        <td class="french">infirmier/infirmière</td>
+                        <td>HSK2</td>
+                    </tr>
+                    <tr class="medical">
+                        <td class="hanzi">医院</td>
+                        <td class="pinyin">yīyuàn</td>
+                        <td class="french">hôpital</td>
+                        <td>HSK1</td>
+                    </tr>
+                    <tr class="medical">
+                        <td class="hanzi">病人</td>
+                        <td class="pinyin">bìngrén</td>
+                        <td class="french">patient, malade</td>
+                        <td>HSK2</td>
+                    </tr>
+                    <tr class="medical">
+                        <td class="hanzi">药</td>
+                        <td class="pinyin">yào</td>
+                        <td class="french">médicament</td>
+                        <td>HSK2</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="example medical">
+                <h4 style="color: #ff6b6b; margin-bottom: 10px;">💡 Pour toi, secrétaire médicale :</h4>
+                <p><strong>我在医院工作。</strong><br>
+                <span class="pinyin">Wǒ zài yīyuàn gōngzuò.</span><br>
+                <em>Je travaille à l'hôpital.</em></p>
+                <p style="margin-top: 10px;"><strong>我是医院的秘书。</strong><br>
+                <span class="pinyin">Wǒ shì yīyuàn de mìshū.</span><br>
+                <em>Je suis secrétaire d'hôpital.</em></p>
+            </div>
+
+            <div class="category">
+                <h3 style="color: white; margin: 0;">👨‍🏫 MÉTIERS DE L'ÉDUCATION</h3>
+            </div>
+
+            <div class="section">
+                <table>
+                    <tr>
+                        <th>汉字 Hanzi</th>
+                        <th>Pinyin</th>
+                        <th>Français</th>
+                        <th>Note</th>
+                    </tr>
+                    <tr>
+                        <td class="hanzi">老师</td>
+                        <td class="pinyin">lǎoshī</td>
+                        <td class="french">professeur</td>
+                        <td>HSK1 ⭐</td>
+                    </tr>
+                    <tr>
+                        <td class="hanzi">学生</td>
+                        <td class="pinyin">xuésheng</td>
+                        <td class="french">étudiant</td>
+                        <td>HSK1</td>
+                    </tr>
+                    <tr>
+                        <td class="hanzi">学校</td>
+                        <td class="pinyin">xuéxiào</td>
+                        <td class="french">école</td>
+                        <td>HSK1</td>
+                    </tr>
+                    <tr>
+                        <td class="hanzi">大学</td>
+                        <td class="pinyin">dàxué</td>
+                        <td class="french">université</td>
+                        <td>HSK2</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="category">
+                <h3 style="color: white; margin: 0;">🏪 MÉTIERS DU COMMERCE ET SERVICES</h3>
+            </div>
+
+            <div class="section">
+                <table>
+                    <tr>
+                        <th>汉字 Hanzi</th>
+                        <th>Pinyin</th>
+                        <th>Français</th>
+                        <th>Note</th>
+                    </tr>
+                    <tr>
+                        <td class="hanzi">服务员</td>
+                        <td class="pinyin">fúwùyuán</td>
+                        <td class="french">serveur/serveuse</td>
+                        <td>HSK2</td>
+                    </tr>
+                    <tr>
+                        <td class="hanzi">售货员</td>
+                        <td class="pinyin">shòuhuòyuán</td>
+                        <td class="french">vendeur/vendeuse</td>
+                        <td>HSK2</td>
+                    </tr>
+                    <tr>
+                        <td class="hanzi">经理</td>
+                        <td class="pinyin">jīnglǐ</td>
+                        <td class="french">directeur, manager</td>
+                        <td>HSK2</td>
+                    </tr>
+                    <tr>
+                        <td class="hanzi">秘书</td>
+                        <td class="pinyin">mìshū</td>
+                        <td class="french">secrétaire</td>
+                        <td>HSK2 ⭐ C'est toi !</td>
+                    </tr>
+                    <tr>
+                        <td class="hanzi">司机</td>
+                        <td class="pinyin">sījī</td>
+                        <td class="french">chauffeur</td>
+                        <td>HSK2</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="category">
+                <h3 style="color: white; margin: 0;">👨‍💼 AUTRES MÉTIERS COURANTS</h3>
+            </div>
+
+            <div class="section">
+                <table>
+                    <tr>
+                        <th>汉字 Hanzi</th>
+                        <th>Pinyin</th>
+                        <th>Français</th>
+                        <th>Note</th>
+                    </tr>
+                    <tr>
+                        <td class="hanzi">律师</td>
+                        <td class="pinyin">lǜshī</td>
+                        <td class="french">avocat</td>
+                        <td>HSK2</td>
+                    </tr>
+                    <tr>
+                        <td class="hanzi">记者</td>
+                        <td class="pinyin">jìzhě</td>
+                        <td class="french">journaliste</td>
+                        <td>HSK2</td>
+                    </tr>
+                    <tr>
+                        <td class="hanzi">演员</td>
+                        <td class="pinyin">yǎnyuán</td>
+                        <td class="french">acteur/actrice</td>
+                        <td>HSK2</td>
+                    </tr>
+                    <tr>
+                        <td class="hanzi">作家</td>
+                        <td class="pinyin">zuòjiā</td>
+                        <td class="french">écrivain</td>
+                        <td>HSK2 - Tu aimes lire !</td>
+                    </tr>
+                    <tr>
+                        <td class="hanzi">职员</td>
+                        <td class="pinyin">zhíyuán</td>
+                        <td class="french">employé de bureau</td>
+                        <td>HSK2</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="tip-box">
+                <h4>💡 Structure importante : 做什么工作？</h4>
+                <p><strong>你做什么工作？</strong><br>
+                <span class="pinyin">Nǐ zuò shénme gōngzuò?</span><br>
+                <em>Quel est ton travail ? / Que fais-tu comme travail ?</em></p>
+                
+                <p style="margin-top: 15px;"><strong>Réponses possibles :</strong></p>
+                <div class="example">
+                    <p>我是秘书。<span class="pinyin">Wǒ shì mìshū.</span> (Je suis secrétaire)</p>
+                    <p>我是医生。<span class="pinyin">Wǒ shì yīshēng.</span> (Je suis médecin)</p>
+                    <p>我是老师。<span class="pinyin">Wǒ shì lǎoshī.</span> (Je suis professeur)</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>📝 Questions fréquentes sur le travail</h2>
+                <div class="example">
+                    <p><strong>1.</strong> 你做什么工作？<br>
+                    <span class="pinyin">Nǐ zuò shénme gōngzuò?</span><br>
+                    <em>Que fais-tu comme travail ?</em></p>
+                </div>
+                <div class="example">
+                    <p><strong>2.</strong> 你在哪儿工作？<br>
+                    <span class="pinyin">Nǐ zài nǎr gōngzuò?</span><br>
+                    <em>Où travailles-tu ?</em></p>
+                </div>
+                <div class="example">
+                    <p><strong>3.</strong> 你几点上班？<br>
+                    <span class="pinyin">Nǐ jǐ diǎn shàngbān?</span><br>
+                    <em>À quelle heure commences-tu le travail ?</em></p>
+                </div>
+                <div class="example">
+                    <p><strong>4.</strong> 你几点下班？<br>
+                    <span class="pinyin">Nǐ jǐ diǎn xiàbān?</span><br>
+                    <em>À quelle heure finis-tu le travail ?</em></p>
+                </div>
+                <div class="example">
+                    <p><strong>5.</strong> 你今天工作吗？<br>
+                    <span class="pinyin">Nǐ jīntiān gōngzuò ma?</span><br>
+                    <em>Tu travailles aujourd'hui ?</em></p>
+                </div>
+                <div class="example">
+                    <p><strong>6.</strong> 你很忙吗？<br>
+                    <span class="pinyin">Nǐ hěn máng ma?</span><br>
+                    <em>Tu es très occupé(e) ?</em></p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>💬 Phrases utiles au travail</h2>
+                <div class="example">
+                    <p><strong>1.</strong> 我在医院工作。<br>
+                    <span class="pinyin">Wǒ zài yīyuàn gōngzuò.</span><br>
+                    <em>Je travaille à l'hôpital.</em></p>
+                </div>
+                <div class="example">
+                    <p><strong>2.</strong> 我是秘书。<br>
+                    <span class="pinyin">Wǒ shì mìshū.</span><br>
+                    <em>Je suis secrétaire.</em></p>
+                </div>
+                <div class="example">
+                    <p><strong>3.</strong> 我早上八点上班。<br>
+                    <span class="pinyin">Wǒ zǎoshang bā diǎn shàngbān.</span><br>
+                    <em>Je commence le travail à 8h du matin.</em></p>
+                </div>
+                <div class="example">
+                    <p><strong>4.</strong> 我下午五点下班。<br>
+                    <span class="pinyin">Wǒ xiàwǔ wǔ diǎn xiàbān.</span><br>
+                    <em>Je finis le travail à 17h.</em></p>
+                </div>
+                <div class="example">
+                    <p><strong>5.</strong> 今天我很忙。<br>
+                    <span class="pinyin">Jīntiān wǒ hěn máng.</span><br>
+                    <em>Aujourd'hui je suis très occupé(e).</em></p>
+                </div>
+                <div class="example">
+                    <p><strong>6.</strong> 我想休息。<br>
+                    <span class="pinyin">Wǒ xiǎng xiūxi.</span><br>
+                    <em>Je veux me reposer.</em></p>
+                </div>
+                <div class="example">
+                    <p><strong>7.</strong> 工作很累。<br>
+                    <span class="pinyin">Gōngzuò hěn lèi.</span><br>
+                    <em>Le travail est très fatigant.</em></p>
+                </div>
+                <div class="example">
+                    <p><strong>8.</strong> 我喜欢我的工作。<br>
+                    <span class="pinyin">Wǒ xǐhuan wǒ de gōngzuò.</span><br>
+                    <em>J'aime mon travail.</em></p>
+                </div>
+            </div>
+
+            <div class="tip-box">
+                <h4>🔊 Attention aux tons délicats !</h4>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 10px;">
+                    <div>
+                        <p><strong>工作 gōngzuò</strong> (travail)</p>
+                        <p style="color: #667eea;">1er ton + 4ème ton</p>
+                    </div>
+                    <div>
+                        <p><strong>学习 xuéxí</strong> (étudier)</p>
+                        <p style="color: #667eea;">2ème ton + 2ème ton</p>
+                    </div>
+                    <div>
+                        <p><strong>医生 yīshēng</strong> (médecin)</p>
+                        <p style="color: #667eea;">1er ton + 1er ton</p>
+                    </div>
+                    <div>
+                        <p><strong>老师 lǎoshī</strong> (professeur)</p>
+                        <p style="color: #667eea;">3ème ton + 1er ton</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="exercise-box">
+                <h4>✍️ Exercices pratiques</h4>
+                
+                <p><strong>Exercice 1 :</strong> Traduis en chinois (pinyin + hanzi)</p>
+                <ol>
+                    <li>Je suis secrétaire : _____________________</li>
+                    <li>Je travaille à l'hôpital : _____________________</li>
+                    <li>Médecin : _____________________</li>
+                    <li>Je commence à 8h : _____________________</li>
+                    <li>Je suis très occupé(e) : _____________________</li>
+                </ol>
+                
+                <p style="margin-top: 20px;"><strong>Exercice 2 :</strong> Complète les phrases</p>
+                <ol>
+                    <li>你___什么工作？(Que fais-tu comme travail ?)</li>
+                    <li>我是___。(Je suis médecin)</li>
+                    <li>我在___工作。(Je travaille à l'école)</li>
+                    <li>今天我很___。(Aujourd'hui je suis très occupé)</li>
+                    <li>我八点___。(Je commence le travail à 8h)</li>
+                </ol>
+
+                <p style="margin-top: 20px;"><strong>Exercice 3 :</strong> Présente ton travail en chinois !</p>
+                <p><em>Utilise : métier, lieu de travail, horaires, comment tu te sens</em></p>
+                <p>À toi ! → _________________________________________________</p>
+            </div>
+
+            <div class="tip-box">
+                <h4>🎓 Astuces de mémorisation</h4>
+                <ul>
+                    <li><strong>Radicaux utiles :</strong>
+                        <br>• 员 yuán (membre) → apparaît dans beaucoup de métiers : 服务员 (serveur), 职员 (employé)
+                        <br>• 师 shī (maître) → 老师 (professeur), 律师 (avocat)
+                    </li>
+                    <li><strong>Ton contexte médical :</strong> Utilise le vocabulaire médical dans des phrases sur ton quotidien !</li>
+                    <li><strong>Personnages de fiction :</strong> Quel est le métier de tes personnages préférés de manga/romans ? Dis-le en chinois !</li>
+                    <li><strong>Présentation :</strong> Entraîne-toi à te présenter professionnellement en chinois tous les jours</li>
+                    <li><strong>Horaires :</strong> Dis tes horaires de travail à voix haute en chinois</li>
+                </ul>
+            </div>
+
+            <div class="tip-box" style="background: linear-gradient(135deg, #d299c2 0%, #fef9d7 100%);">
+                <h4>🌸 Note culturelle : Le travail en Chine</h4>
+                <p>En Chine, la culture du travail est très importante :</p>
+                <ul>
+                    <li><strong>996 :</strong> Certaines entreprises tech travaillent de 9h à 21h, 6 jours par semaine</li>
+                    <li><strong>Respect des titres :</strong> On s'adresse souvent aux gens par leur métier : 李医生 Lǐ yīshēng (Docteur Li)</li>
+                    <li><strong>Guanxi 关系 :</strong> Les relations professionnelles sont essentielles dans la culture du travail chinoise</li>
+                    <li><strong>Cartes de visite :</strong> S'échangent avec les deux mains en signe de respect</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>✨ Super travail Lucie ! 加油！(Jiāyóu!) ✨</p>
+            <p>Chaque métier appris enrichit ton vocabulaire professionnel ! 💼🎯</p>
+        </div>
+    </div>
+</body>
+</html>

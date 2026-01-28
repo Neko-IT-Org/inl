@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学中文 - Apprendre le Chinois avec Lucie 🇨🇳</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            min-height: 100vh;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        /* HEADER AVEC LOGO */
+        .header {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            animation: fadeInDown 0.8s ease;
+        }
+        
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .logo {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: 50px;
+            box-shadow: 0 10px 30px rgba(240, 147, 251, 0.4);
+            animation: float 3s ease-in-out infinite;
+            border: 5px solid white;
+        }
+        
+        .logo-text {
+            font-size: 14px;
+            color: white;
+            font-weight: bold;
+            margin-top: 5px;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        h1 {
+            font-size: 2.5em;
+            background: linear-gradient(135deg, #667eea 0%, #f5576c 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            font-size: 1.3em;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        .chinese-subtitle {
+            font-size: 1.5em;
+            color: #f5576c;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        
+        .pinyin {
+            color: #667eea;
+            font-size: 1.1em;
+        }
+        
+        /* SECTION INTRO */
+        .intro-section {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            animation: fadeIn 1s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .intro-section h2 {
+            color: #f5576c;
+            margin-bottom: 15px;
+            font-size: 1.8em;
+        }
+        
+        .intro-section p {
+            color: #555;
+            font-size: 1.1em;
+            line-height: 1.8;
+        }
+        
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .stat-card {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #f5576c;
+        }
+        
+        .stat-label {
+            color: #666;
+            margin-top: 5px;
+        }
+        
+        /* SECTION LEÇONS */
+        .lessons-section {
+            margin-bottom: 30px;
+        }
+        
+        .section-title {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+        
+        .section-title h2 {
+            color: #667eea;
+            font-size: 2em;
+        }
+        
+        /* GRILLE DE LEÇONS */
+        .lessons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        
+        /* ===================================
+           BLOC DE LEÇON - À COPIER-COLLER !
+           ===================================
+           
+           Pour ajouter une nouvelle leçon, copie tout le code entre
+           les commentaires "DÉBUT BLOC" et "FIN BLOC" et modifie :
+           1. La classe "lesson-card-X" (change le numéro/couleur)
+           2. L'emoji dans lesson-icon
+           3. Le titre de la leçon
+           4. La description
+           5. Le lien href="TA-PAGE.html"
+        */
+        
+        /* DÉBUT BLOC LEÇON */
+        .lesson-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            display: block;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .lesson-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .lesson-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+        
+        /* COULEURS DIFFÉRENTES POUR CHAQUE LEÇON */
+        .lesson-card-purple::before {
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .lesson-card-pink::before {
+            background: linear-gradient(90deg, #fa709a 0%, #fee140 100%);
+        }
+        
+        .lesson-card-blue::before {
+            background: linear-gradient(90deg, #4facfe 0%, #00f2fe 100%);
+        }
+        
+        .lesson-card-gradient::before {
+            background: linear-gradient(90deg, #f093fb 0%, #f5576c 100%);
+        }
+        
+        .lesson-icon {
+            font-size: 4em;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        
+        .lesson-title {
+            font-size: 1.5em;
+            color: #333;
+            margin-bottom: 10px;
+            text-align: center;
+            font-weight: bold;
+        }
+        
+        .lesson-chinese {
+            font-size: 1.3em;
+            color: #f5576c;
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .lesson-pinyin {
+            font-size: 1em;
+            color: #667eea;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        
+        .lesson-description {
+            color: #666;
+            text-align: center;
+            line-height: 1.6;
+        }
+        
+        .lesson-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            color: #d63447;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+        /* FIN BLOC LEÇON */
+        
+        /* FOOTER */
+        .footer {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            margin-top: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .footer h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+        
+        .footer p {
+            color: #666;
+            font-size: 1.1em;
+            margin: 10px 0;
+        }
+        
+        .encouragement {
+            font-size: 1.3em;
+            color: #f5576c;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        
+        /* RESPONSIVE DESIGN */
+        @media (max-width: 768px) {
+            .header {
+                padding: 30px 20px;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+            
+            .subtitle {
+                font-size: 1.1em;
+            }
+            
+            .logo {
+                width: 100px;
+                height: 100px;
+                font-size: 40px;
+            }
+            
+            .lessons-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .lessons-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- HEADER -->
+        <header class="header">
+            <div class="logo-container">
+                <div class="logo">
+                    👩‍🏫
+                    <div class="logo-text">老师 lǎoshī</div>
+                </div>
+            </div>
+            <h1>🇨🇳 Apprendre le Chinois</h1>
+            <p class="subtitle">Cours de Mandarin HSK1 & HSK2 pour Lucie</p>
+            <p class="chinese-subtitle">学中文 <span class="pinyin">xué zhōngwén</span></p>
+            <p style="color: #888; margin-top: 10px;">Apprendre le chinois • Niveau débutant</p>
+        </header>
+
+        <!-- SECTION INTRO -->
+        <section class="intro-section">
+            <h2>👋 欢迎！ <span class="pinyin">Huānyíng!</span> (Bienvenue !)</h2>
+            <p>
+                Bienvenue sur ton espace d'apprentissage du chinois mandarin ! 🎉
+                <br><br>
+                Ce site regroupe toutes tes fiches de révision pour le <strong>HSK1</strong> (150 mots) et le <strong>HSK2</strong> (300 mots). 
+                Chaque leçon contient du vocabulaire avec les <strong>汉字 hànzì</strong> (caractères chinois), 
+                le <strong>拼音 pīnyīn</strong> (romanisation avec tons), et des exemples pratiques pour ton quotidien ! 📚
+                <br><br>
+                <strong>记住：</strong> <span class="pinyin">Jìzhù:</span> (Souviens-toi :) 
+                Chaque caractère appris est une victoire ! La régularité est plus importante que la perfection. 
+            </p>
+            
+            <div class="stats">
+                <div class="stat-card">
+                    <div class="stat-number">150</div>
+                    <div class="stat-label">Mots HSK1</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">300</div>
+                    <div class="stat-label">Mots HSK2</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">4</div>
+                    <div class="stat-label">Leçons disponibles</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION LEÇONS -->
+        <section class="lessons-section">
+            <div class="section-title">
+                <h2>📚 Mes Leçons de Chinois</h2>
+                <p class="pinyin">wǒ de zhōngwén kè</p>
+            </div>
+
+            <div class="lessons-grid">
+                
+                <!-- ============================================
+                     BLOC 1 - COPIE À PARTIR D'ICI POUR AJOUTER UNE LEÇON
+                     ============================================ -->
+                <a href="01_chiffres_0_1000.html" class="lesson-card lesson-card-purple">
+                    <div class="lesson-icon">🔢</div>
+                    <h3 class="lesson-title">Les Chiffres</h3>
+                    <p class="lesson-chinese">数字</p>
+                    <p class="lesson-pinyin">shùzì</p>
+                    <p class="lesson-description">
+                        Apprends à compter de 0 à 1000 ! Les nombres, l'argent, l'âge, les dates... 
+                        Essentiel pour la vie quotidienne en Chine.
+                    </p>
+                    <span class="lesson-badge">HSK1 & HSK2</span>
+                </a>
+                <!-- ============================================
+                     FIN BLOC 1 - ARRÊTE DE COPIER ICI
+                     ============================================ -->
+
+                <!-- ============================================
+                     BLOC 2 - COPIE À PARTIR D'ICI POUR AJOUTER UNE LEÇON
+                     ============================================ -->
+                <a href="02_famille.html" class="lesson-card lesson-card-pink">
+                    <div class="lesson-icon">👨‍👩‍👧‍👦</div>
+                    <h3 class="lesson-title">La Famille</h3>
+                    <p class="lesson-chinese">家庭</p>
+                    <p class="lesson-pinyin">jiātíng</p>
+                    <p class="lesson-description">
+                        Membres de la famille, relations, comment parler de tes proches. 
+                        La famille est au cœur de la culture chinoise !
+                    </p>
+                    <span class="lesson-badge">HSK1 & HSK2</span>
+                </a>
+                <!-- ============================================
+                     FIN BLOC 2 - ARRÊTE DE COPIER ICI
+                     ============================================ -->
+
+                <!-- ============================================
+                     BLOC 3 - COPIE À PARTIR D'ICI POUR AJOUTER UNE LEÇON
+                     ============================================ -->
+                <a href="03_travail_metiers.html" class="lesson-card lesson-card-blue">
+                    <div class="lesson-icon">💼</div>
+                    <h3 class="lesson-title">Le Travail</h3>
+                    <p class="lesson-chinese">工作</p>
+                    <p class="lesson-pinyin">gōngzuò</p>
+                    <p class="lesson-description">
+                        Les métiers, ton travail, les horaires... Avec une section spéciale 
+                        sur les métiers médicaux pour toi ! 🏥
+                    </p>
+                    <span class="lesson-badge">HSK1 & HSK2</span>
+                </a>
+                <!-- ============================================
+                     FIN BLOC 3 - ARRÊTE DE COPIER ICI
+                     ============================================ -->
+
+                <!-- ============================================
+                     BLOC 4 - COPIE À PARTIR D'ICI POUR AJOUTER UNE LEÇON
+                     ============================================ -->
+                <a href="04_heures.html" class="lesson-card lesson-card-gradient">
+                    <div class="lesson-icon">⏰</div>
+                    <h3 class="lesson-title">Les Heures</h3>
+                    <p class="lesson-chinese">时间</p>
+                    <p class="lesson-pinyin">shíjiān</p>
+                    <p class="lesson-description">
+                        Dire l'heure, les moments de la journée, organiser ton emploi du temps. 
+                        Le temps maîtrisé, c'est une vie organisée !
+                    </p>
+                    <span class="lesson-badge">HSK1 & HSK2</span>
+                </a>
+                <!-- ============================================
+                     FIN BLOC 4 - ARRÊTE DE COPIER ICI
+                     ============================================ -->
+
+                <!-- 
+                ============================================
+                📝 INSTRUCTIONS POUR AJOUTER UNE NOUVELLE LEÇON :
+                ============================================
+                
+                1. Copie UN des blocs ci-dessus (de "BLOC X" à "FIN BLOC X")
+                2. Colle-le ici en bas
+                3. Modifie ces éléments :
+                   - href="TON-FICHIER.html" → nom de ta nouvelle page
+                   - class="lesson-card lesson-card-XXX" → choisis une couleur :
+                     * lesson-card-purple (violet)
+                     * lesson-card-pink (rose)
+                     * lesson-card-blue (bleu)
+                     * lesson-card-gradient (dégradé)
+                   - lesson-icon : change l'emoji (🍜 📖 🎯 🏃 ✈️ etc.)
+                   - lesson-title : titre en français
+                   - lesson-chinese : mot en chinois (汉字)
+                   - lesson-pinyin : prononciation (pīnyīn avec tons)
+                   - lesson-description : description de la leçon
+                
+                EXEMPLE DE NOUVEAU BLOC :
+                
+                <a href="05_nourriture.html" class="lesson-card lesson-card-pink">
+                    <div class="lesson-icon">🍜</div>
+                    <h3 class="lesson-title">La Nourriture</h3>
+                    <p class="lesson-chinese">食物</p>
+                    <p class="lesson-pinyin">shíwù</p>
+                    <p class="lesson-description">
+                        Vocabulaire pour commander au restaurant, faire les courses, 
+                        parler de tes plats préférés !
+                    </p>
+                    <span class="lesson-badge">HSK1 & HSK2</span>
+                </a>
+                
+                ============================================ -->
+
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <h3>💪 继续努力！<span class="pinyin">Jìxù nǔlì!</span></h3>
+            <p>Continue tes efforts ! Chaque jour un peu de chinois te rapproche de ton objectif HSK ! 🎯</p>
+            <p style="color: #888; margin-top: 20px;">
+                💡 <strong>Conseil :</strong> Révise 10-15 minutes par jour plutôt qu'une longue session une fois par semaine. 
+                La régularité est la clé ! 🔑
+            </p>
+            <p class="encouragement">
+                加油 Lucie！ <span class="pinyin">Jiāyóu Lucie!</span> 🚀
+            </p>
+            <p style="color: #888; margin-top: 20px; font-size: 0.9em;">
+                👩‍🏫 Ton professeur virtuel de chinois • HSK1 & HSK2
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

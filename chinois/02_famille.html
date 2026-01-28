@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>👨‍👩‍👧‍👦 La Famille - HSK1 & HSK2</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #ffecd2 100%);
+            padding: 20px;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .logo {
+            width: 100px;
+            height: 100px;
+            background: white;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 50px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .subtitle {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+        }
+        
+        h2 {
+            color: #fa709a;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #fee140;
+        }
+        
+        h3 {
+            color: #ff6b6b;
+            font-size: 1.4em;
+            margin: 25px 0 15px 0;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        th {
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-size: 1.1em;
+        }
+        
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        tr:hover {
+            background: #fff8f0;
+        }
+        
+        .hanzi {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #fa709a;
+        }
+        
+        .pinyin {
+            color: #ff6b6b;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        
+        .french {
+            color: #555;
+        }
+        
+        .tip-box {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+            border-left: 5px solid #fa709a;
+        }
+        
+        .tip-box h4 {
+            color: #d63447;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+        
+        .exercise-box {
+            background: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%);
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+            border-left: 5px solid #fa709a;
+        }
+        
+        .exercise-box h4 {
+            color: #5f27cd;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+        
+        .example {
+            background: #fff8f0;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 10px 0;
+            border-left: 4px solid #fee140;
+        }
+        
+        .family-tree {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        .generation {
+            margin: 20px 0;
+            padding: 15px;
+            background: white;
+            border-radius: 10px;
+        }
+        
+        .male {
+            color: #4a90e2;
+            font-weight: bold;
+        }
+        
+        .female {
+            color: #e91e63;
+            font-weight: bold;
+        }
+        
+        .highlight {
+            background: #fff3cd;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        
+        ul, ol {
+            margin-left: 30px;
+            margin-top: 10px;
+        }
+        
+        li {
+            margin: 8px 0;
+        }
+        
+        .footer {
+            background: #fa709a;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 1.1em;
+        }
+        
+        .emoji {
+            font-size: 1.3em;
+        }
+        
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            .container {
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">👨‍👩‍👧‍👦</div>
+            <h1>👨‍👩‍👧‍👦 La Famille 家庭</h1>
+            <p class="subtitle">HSK1 & HSK2 • Fiche de révision pour Lucie</p>
+        </div>
+        
+        <div class="content">
+            <div class="section">
+                <h2>👪 Membres de la famille - Vocabulaire de base</h2>
+                <table>
+                    <tr>
+                        <th>汉字 Hanzi</th>
+                        <th>Pinyin</th>
+                        <th>Français</th>
+                        <th>Note</th>
+                    </tr>
+                    <tr>
+                        <td class="hanzi">家</td>
+                        <td class="pinyin">jiā</td>
+                        <td class="french">famille, maison</td>
+                        <td>我家 wǒ jiā (ma famille)</td>
+                    </tr>
+                    <tr>
+                        <td class="hanzi">家人</td>
+                        <td class="pinyin">jiārén</td>
+                        <td class="french">membres de la famille</td>
+                        <td>HSK2</td>
+                    </tr>
+                    <tr>
+                        <td class="hanzi">爸爸</td>
+                        <td class="pinyin">bàba</td>
+                        <td class="french">papa</td>
+                        <td><span class="male">♂</span> informel</td>
+                    </tr>
+                    <tr>
+                        <td class="hanzi">妈妈</td>
+                        <td class="pinyin">māma</td>
+                        <td class="french">maman</td>
+                        <td><span class="female">♀</span> informel</td>
+                    </tr>
+                    <tr>
+                        <td class="hanzi">父亲</td>
+                        <td class="pinyin">fùqīn</td>
+                        <td class="french">père</td>
+                        <td><span class="male">♂</span> formel - HSK2</td>
+                    </tr>
+                    <tr>
+                        <td class="hanzi">母亲</td>
+                        <td class="pinyin">mǔqīn</td>
+                        <td class="french">mère</td>
+                        <td><span class="female">♀</span> formel - HSK2</td>
+                    </tr>
+                    <tr>
+                        <td class="hanzi">儿子</td>
+                        <td class="pinyin">érzi</td>
+                        <td class="french">fils</td>
+                        <td><span class="male">♂</span></td>
+                    </tr>
+                    <tr>
+                        <td class="hanzi">女儿</td>
+                        <td class="pinyin">nǚ'ér</td>
+                        <td class="french">fille</td>
+                        <td><span class="female">♀</span></td>
+                    </tr>
+                    <tr>
+                        <td class="hanzi">孩子</td>
+                        <td class="pinyin">háizi</td>
+                        <td class="french">enfant</td>
+                        <td>孩子们 háizimen (enfants)</td>
+                    </tr>
+                    <tr>
+                        <td class="hanzi">哥哥</td>
+                        <td class="pinyin">gēge</td>
+                        <td class="french">grand frère</td>
+                        <td><span class="male">♂</span> frère plus âgé</td>
+                    </tr>
+                    <tr>
+                        <td class="hanzi">姐姐</td>
+                        <td class="pinyin">jiějie</td>
+                        <td class="french">grande sœur</td>
+                        <td><span class="female">♀</span> sœur plus âgée</td>
+                    </tr>
+                    <tr>
+                        <td class="hanzi">弟弟</td>
+                        <td class="pinyin">dìdi</td>
+                        <td class="french">petit frère</td>
+                        <td><span class="male">♂</span> frère plus jeune</td>
+                    </tr>
+                    <tr>
+                        <td class="hanzi">妹妹</td>
+                        <td class="pinyin">mèimei</td>
+                        <td class="french">petite sœur</td>
+                        <td><span class="female">♀</span> sœur plus jeune</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="tip-box">
+                <h4>💡 Particularité chinoise : l'âge compte !</h4>
+                <p>En chinois, on ne dit pas juste "frère" ou "sœur" - on précise TOUJOURS si la personne est plus âgée ou plus jeune que soi !</p>
+                <div class="example">
+                    <p><strong>Plus âgé :</strong> 哥哥 gēge (grand frère) • 姐姐 jiějie (grande sœur)</p>
+                    <p><strong>Plus jeune :</strong> 弟弟 dìdi (petit frère) • 妹妹 mèimei (petite sœur)</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>👴👵 Grands-parents</h2>
+                <table>
+                    <tr>
+                        <th>汉字 Hanzi</th>
+                        <th>Pinyin</th>
+                        <th>Français</th>
+                        <th>Note</th>
+                    </tr>
+                    <tr>
+                        <td class="hanzi">爷爷</td>
+                        <td class="pinyin">yéye</td>
+                        <td class="french">grand-père paternel</td>
+                        <td><span class="male">♂</span> côté du père</td>
+                    </tr>
+                    <tr>
+                        <td class="hanzi">奶奶</td>
+                        <td class="pinyin">nǎinai</td>
+                        <td class="french">grand-mère paternelle</td>
+                        <td><span class="female">♀</span> côté du père</td>
+                    </tr>
+                    <tr>
+                        <td class="hanzi">外公</td>
+                        <td class="pinyin">wàigōng</td>
+                        <td class="french">grand-père maternel</td>
+                        <td><span class="male">♂</span> côté de la mère</td>
+                    </tr>
+                    <tr>
+                        <td class="hanzi">外婆</td>
+                        <td class="pinyin">wàipó</td>
+                        <td class="french">grand-mère maternelle</td>
+                        <td><span class="female">♀</span> côté de la mère</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="tip-box">
+                <h4>🎯 Astuce : 外 wài = "extérieur"</h4>
+                <p>Le préfixe <span class="highlight">外 wài</span> indique la famille du côté de la mère (considérée comme "extérieure" dans la tradition chinoise)</p>
+                <p><strong>外公 wàigōng</strong> = grand-père "extérieur" (maternel)</p>
+                <p><strong>外婆 wàipó</strong> = grand-mère "extérieure" (maternelle)</p>
+            </div>
+
+            <div class="section">
+                <h2>💑 Couple et relations</h2>
+                <table>
+                    <tr>
+                        <th>汉字 Hanzi</th>
+                        <th>Pinyin</th>
+                        <th>Français</th>
+                        <th>Note</th>
+                    </tr>
+                    <tr>
+                        <td class="hanzi">先生</td>
+                        <td class="pinyin">xiānsheng</td>
+                        <td class="french">mari, monsieur</td>
+                        <td><span class="male">♂</span></td>
+                    </tr>
+                    <tr>
+                        <td class="hanzi">太太</td>
+                        <td class="pinyin">tàitai</td>
+                        <td class="french">épouse, madame</td>
+                        <td><span class="female">♀</span></td>
+                    </tr>
+                    <tr>
+                        <td class="hanzi">丈夫</td>
+                        <td class="pinyin">zhàngfu</td>
+                        <td class="french">mari</td>
+                        <td><span class="male">♂</span> HSK2</td>
+                    </tr>
+                    <tr>
+                        <td class="hanzi">妻子</td>
+                        <td class="pinyin">qīzi</td>
+                        <td class="french">épouse</td>
+                        <td><span class="female">♀</span> HSK2</td>
+                    </tr>
+                    <tr>
+                        <td class="hanzi">爱人</td>
+                        <td class="pinyin">àirén</td>
+                        <td class="french">conjoint(e)</td>
+                        <td>terme neutre - HSK2</td>
+                    </tr>
+                    <tr>
+                        <td class="hanzi">男朋友</td>
+                        <td class="pinyin">nánpéngyou</td>
+                        <td class="french">petit ami</td>
+                        <td><span class="male">♂</span> HSK2</td>
+                    </tr>
+                    <tr>
+                        <td class="hanzi">女朋友</td>
+                        <td class="pinyin">nǚpéngyou</td>
+                        <td class="french">petite amie</td>
+                        <td><span class="female">♀</span> HSK2</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="section">
+                <h2>👥 Vocabulaire complémentaire</h2>
+                <table>
+                    <tr>
+                        <th>汉字 Hanzi</th>
+                        <th>Pinyin</th>
+                        <th>Français</th>
+                    </tr>
+                    <tr>
+                        <td class="hanzi">男人</td>
+                        <td class="pinyin">nánrén</td>
+                        <td class="french">homme</td>
+                    </tr>
+                    <tr>
+                        <td class="hanzi">女人</td>
+                        <td class="pinyin">nǚrén</td>
+                        <td class="french">femme</td>
+                    </tr>
+                    <tr>
+                        <td class="hanzi">男孩</td>
+                        <td class="pinyin">nánhái</td>
+                        <td class="french">garçon</td>
+                    </tr>
+                    <tr>
+                        <td class="hanzi">女孩</td>
+                        <td class="pinyin">nǚhái</td>
+                        <td class="french">fille</td>
+                    </tr>
+                    <tr>
+                        <td class="hanzi">朋友</td>
+                        <td class="pinyin">péngyou</td>
+                        <td class="french">ami(e)</td>
+                    </tr>
+                    <tr>
+                        <td class="hanzi">同学</td>
+                        <td class="pinyin">tóngxué</td>
+                        <td class="french">camarade de classe</td>
+                    </tr>
+                    <tr>
+                        <td class="hanzi">老师</td>
+                        <td class="pinyin">lǎoshī</td>
+                        <td class="french">professeur</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="family-tree">
+                <h3 style="color: #fa709a; margin-bottom: 20px;">🌳 Arbre généalogique simplifié</h3>
+                
+                <div class="generation">
+                    <p style="font-size: 1.2em; margin-bottom: 10px;"><strong>Génération des grands-parents 祖父母</strong></p>
+                    <p><span class="male">爷爷 yéye</span> + <span class="female">奶奶 nǎinai</span> &nbsp;&nbsp;|&nbsp;&nbsp; <span class="male">外公 wàigōng</span> + <span class="female">外婆 wàipó</span></p>
+                </div>
+                
+                <p style="font-size: 2em; margin: 10px 0;">⬇️</p>
+                
+                <div class="generation">
+                    <p style="font-size: 1.2em; margin-bottom: 10px;"><strong>Génération des parents 父母</strong></p>
+                    <p><span class="male">爸爸 bàba</span> + <span class="female">妈妈 māma</span></p>
+                </div>
+                
+                <p style="font-size: 2em; margin: 10px 0;">⬇️</p>
+                
+                <div class="generation">
+                    <p style="font-size: 1.2em; margin-bottom: 10px;"><strong>Ta génération 我</strong></p>
+                    <p><span class="male">哥哥 gēge</span> &nbsp; <strong>我 wǒ (moi)</strong> &nbsp; <span class="female">妹妹 mèimei</span></p>
+                </div>
+                
+                <p style="font-size: 2em; margin: 10px 0;">⬇️</p>
+                
+                <div class="generation">
+                    <p style="font-size: 1.2em; margin-bottom: 10px;"><strong>Génération des enfants 孩子</strong></p>
+                    <p><span class="male">儿子 érzi</span> + <span class="female">女儿 nǚ'ér</span></p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>📱 Phrases utiles pour parler de sa famille</h2>
+                <div class="example">
+                    <p><strong>1.</strong> 你家有几口人？<br>
+                    <span class="pinyin">Nǐ jiā yǒu jǐ kǒu rén?</span><br>
+                    <em>Combien de personnes y a-t-il dans ta famille ?</em></p>
+                </div>
+                <div class="example">
+                    <p><strong>2.</strong> 我家有四口人。<br>
+                    <span class="pinyin">Wǒ jiā yǒu sì kǒu rén.</span><br>
+                    <em>Il y a quatre personnes dans ma famille.</em></p>
+                </div>
+                <div class="example">
+                    <p><strong>3.</strong> 我有一个哥哥和一个妹妹。<br>
+                    <span class="pinyin">Wǒ yǒu yí ge gēge hé yí ge mèimei.</span><br>
+                    <em>J'ai un grand frère et une petite sœur.</em></p>
+                </div>
+                <div class="example">
+                    <p><strong>4.</strong> 这是我妈妈。<br>
+                    <span class="pinyin">Zhè shì wǒ māma.</span><br>
+                    <em>C'est ma maman.</em></p>
+                </div>
+                <div class="example">
+                    <p><strong>5.</strong> 我爸爸是医生。<br>
+                    <span class="pinyin">Wǒ bàba shì yīshēng.</span><br>
+                    <em>Mon papa est médecin.</em></p>
+                </div>
+                <div class="example">
+                    <p><strong>6.</strong> 你有孩子吗？<br>
+                    <span class="pinyin">Nǐ yǒu háizi ma?</span><br>
+                    <em>As-tu des enfants ?</em></p>
+                </div>
+                <div class="example">
+                    <p><strong>7.</strong> 我没有孩子。<br>
+                    <span class="pinyin">Wǒ méiyǒu háizi.</span><br>
+                    <em>Je n'ai pas d'enfants.</em></p>
+                </div>
+                <div class="example">
+                    <p><strong>8.</strong> 我爱我的家人。<br>
+                    <span class="pinyin">Wǒ ài wǒ de jiārén.</span><br>
+                    <em>J'aime ma famille.</em></p>
+                </div>
+            </div>
+
+            <div class="tip-box">
+                <h4>🔊 Attention aux tons !</h4>
+                <p><strong>妈妈 māma</strong> (maman) - 1er ton + neutre</p>
+                <p><strong>爸爸 bàba</strong> (papa) - 4ème ton + neutre</p>
+                <p><strong>哥哥 gēge</strong> (grand frère) - 1er ton + neutre</p>
+                <p><strong>弟弟 dìdi</strong> (petit frère) - 4ème ton + neutre</p>
+                <p style="margin-top: 15px; color: #d63447;"><strong>Note :</strong> Le deuxième caractère des noms de famille se prononce souvent avec un ton neutre (léger) !</p>
+            </div>
+
+            <div class="exercise-box">
+                <h4>✍️ Exercices pratiques</h4>
+                
+                <p><strong>Exercice 1 :</strong> Traduis en chinois</p>
+                <ol>
+                    <li>Ma maman : _____________________</li>
+                    <li>Grand frère : _____________________</li>
+                    <li>Petite sœur : _____________________</li>
+                    <li>Grand-père paternel : _____________________</li>
+                    <li>Mon fils : _____________________</li>
+                </ol>
+                
+                <p style="margin-top: 20px;"><strong>Exercice 2 :</strong> Complète les phrases</p>
+                <ol>
+                    <li>我___有四口人。(Ma famille a 4 personnes)</li>
+                    <li>这是我___。(C'est mon papa)</li>
+                    <li>我有一个___和两个___。(J'ai une grande sœur et deux petits frères)</li>
+                    <li>你___孩子吗？(As-tu des enfants ?)</li>
+                </ol>
+
+                <p style="margin-top: 20px;"><strong>Exercice 3 :</strong> Présente ta famille en chinois !</p>
+                <p><em>Exemple : 我家有三口人，爸爸、妈妈和我。我没有兄弟姐妹。</em></p>
+                <p>À toi ! → _________________________________________________</p>
+            </div>
+
+            <div class="tip-box">
+                <h4>🎓 Astuces de mémorisation</h4>
+                <ul>
+                    <li><strong>Les radicaux :</strong> 
+                        <br>• 女 nǚ (femme) → 妈 mā (maman), 姐 jiě (sœur aînée), 妹 mèi (sœur cadette), 奶 nǎi (grand-mère)
+                        <br>• 子 zǐ (enfant) → 儿子 érzi (fils), 孩子 háizi (enfant)
+                    </li>
+                    <li><strong>Personnages de manga :</strong> Pense aux relations familiales de tes personnages préférés en chinois !</li>
+                    <li><strong>Romans :</strong> Quand tu lis, imagine les liens familiaux en chinois</li>
+                    <li><strong>Répétition :</strong> Décris ta famille à voix haute tous les jours en chinois</li>
+                    <li><strong>Photos :</strong> Regarde des photos de famille et nomme chaque personne en chinois</li>
+                </ul>
+            </div>
+
+            <div class="tip-box" style="background: linear-gradient(135deg, #d299c2 0%, #fef9d7 100%);">
+                <h4>🌸 Note culturelle</h4>
+                <p>En Chine, la famille est extrêmement importante ! On utilise souvent les termes familiaux pour s'adresser même aux non-membres de la famille :</p>
+                <ul>
+                    <li>阿姨 āyí (tante) → pour les femmes d'âge moyen</li>
+                    <li>叔叔 shūshu (oncle) → pour les hommes d'âge moyen</li>
+                    <li>爷爷 yéye (grand-père) → pour les hommes âgés</li>
+                    <li>奶奶 nǎinai (grand-mère) → pour les femmes âgées</li>
+                </ul>
+                <p style="margin-top: 10px;"><em>C'est une marque de respect et de proximité !</em></p>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>✨ Excellente révision Lucie ! 加油！(Jiāyóu!) ✨</p>
+            <p>La famille, c'est le cœur de la culture chinoise ! ❤️👨‍👩‍👧‍👦</p>
+        </div>
+    </div>
+</body>
+</html>

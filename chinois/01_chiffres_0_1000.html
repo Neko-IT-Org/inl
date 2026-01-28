@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔢 Les Chiffres 0-1000 - HSK1 & HSK2</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .logo {
+            width: 100px;
+            height: 100px;
+            background: white;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 50px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .subtitle {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+        }
+        
+        h2 {
+            color: #f5576c;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #f093fb;
+        }
+        
+        h3 {
+            color: #667eea;
+            font-size: 1.4em;
+            margin: 25px 0 15px 0;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-size: 1.1em;
+        }
+        
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        tr:hover {
+            background: #f8f9ff;
+        }
+        
+        .hanzi {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #f5576c;
+        }
+        
+        .pinyin {
+            color: #667eea;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        
+        .french {
+            color: #555;
+        }
+        
+        .tip-box {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+            border-left: 5px solid #f5576c;
+        }
+        
+        .tip-box h4 {
+            color: #d63447;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+        
+        .exercise-box {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+            border-left: 5px solid #667eea;
+        }
+        
+        .exercise-box h4 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+        
+        .example {
+            background: #f8f9ff;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 10px 0;
+            border-left: 4px solid #f093fb;
+        }
+        
+        .highlight {
+            background: #fff3cd;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        
+        ul, ol {
+            margin-left: 30px;
+            margin-top: 10px;
+        }
+        
+        li {
+            margin: 8px 0;
+        }
+        
+        .footer {
+            background: #667eea;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 1.1em;
+        }
+        
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            .container {
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">🧮</div>
+            <h1>🔢 Les Chiffres 0-1000</h1>
+            <p class="subtitle">HSK1 & HSK2 • Fiche de révision pour Lucie</p>
+        </div>
+        
+        <div class="content">
+            <div class="section">
+                <h2>📊 Les Chiffres de Base (0-10)</h2>
+                <table>
+                    <tr>
+                        <th>汉字 Hanzi</th>
+                        <th>Pinyin</th>
+                        <th>Français</th>
+                        <th>Exemple</th>
+                    </tr>
+                    <tr>
+                        <td class="hanzi">零</td>
+                        <td class="pinyin">líng</td>
+                        <td class="french">0, zéro</td>
+                        <td>零分 líng fēn (zéro point)</td>
+                    </tr>
+                    <tr>
+                        <td class="hanzi">一</td>
+                        <td class="pinyin">yī</td>
+                        <td class="french">1, un</td>
+                        <td>一个人 yí ge rén (une personne)</td>
+                    </tr>
+                    <tr>
+                        <td class="hanzi">二</td>
+                        <td class="pinyin">èr</td>
+                        <td class="french">2, deux</td>
+                        <td>二月 èr yuè (février)</td>
+                    </tr>
+                    <tr>
+                        <td class="hanzi">三</td>
+                        <td class="pinyin">sān</td>
+                        <td class="french">3, trois</td>
+                        <td>三天 sān tiān (trois jours)</td>
+                    </tr>
+                    <tr>
+                        <td class="hanzi">四</td>
+                        <td class="pinyin">sì</td>
+                        <td class="french">4, quatre</td>
+                        <td>四点 sì diǎn (quatre heures)</td>
+                    </tr>
+                    <tr>
+                        <td class="hanzi">五</td>
+                        <td class="pinyin">wǔ</td>
+                        <td class="french">5, cinq</td>
+                        <td>五个 wǔ ge (cinq)</td>
+                    </tr>
+                    <tr>
+                        <td class="hanzi">六</td>
+                        <td class="pinyin">liù</td>
+                        <td class="french">6, six</td>
+                        <td>六月 liù yuè (juin)</td>
+                    </tr>
+                    <tr>
+                        <td class="hanzi">七</td>
+                        <td class="pinyin">qī</td>
+                        <td class="french">7, sept</td>
+                        <td>七点 qī diǎn (sept heures)</td>
+                    </tr>
+                    <tr>
+                        <td class="hanzi">八</td>
+                        <td class="pinyin">bā</td>
+                        <td class="french">8, huit</td>
+                        <td>八月 bā yuè (août)</td>
+                    </tr>
+                    <tr>
+                        <td class="hanzi">九</td>
+                        <td class="pinyin">jiǔ</td>
+                        <td class="french">9, neuf</td>
+                        <td>九点 jiǔ diǎn (neuf heures)</td>
+                    </tr>
+                    <tr>
+                        <td class="hanzi">十</td>
+                        <td class="pinyin">shí</td>
+                        <td class="french">10, dix</td>
+                        <td>十个 shí ge (dix)</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="tip-box">
+                <h4>💡 Astuce importante : 二 (èr) vs 两 (liǎng)</h4>
+                <p><strong>二 èr</strong> s'utilise pour compter (un, deux, trois...) ou dans les nombres : 二十 èrshí (20), 二百 èrbǎi (200)</p>
+                <p><strong>两 liǎng</strong> s'utilise avec les spécificatifs : 两个人 liǎng ge rén (deux personnes), 两本书 liǎng běn shū (deux livres)</p>
+            </div>
+
+            <div class="section">
+                <h2>🔢 Les Dizaines (10-100)</h2>
+                <table>
+                    <tr>
+                        <th>汉字 Hanzi</th>
+                        <th>Pinyin</th>
+                        <th>Français</th>
+                    </tr>
+                    <tr>
+                        <td class="hanzi">十</td>
+                        <td class="pinyin">shí</td>
+                        <td class="french">10</td>
+                    </tr>
+                    <tr>
+                        <td class="hanzi">二十</td>
+                        <td class="pinyin">èrshí</td>
+                        <td class="french">20</td>
+                    </tr>
+                    <tr>
+                        <td class="hanzi">三十</td>
+                        <td class="pinyin">sānshí</td>
+                        <td class="french">30</td>
+                    </tr>
+                    <tr>
+                        <td class="hanzi">四十</td>
+                        <td class="pinyin">sìshí</td>
+                        <td class="french">40</td>
+                    </tr>
+                    <tr>
+                        <td class="hanzi">五十</td>
+                        <td class="pinyin">wǔshí</td>
+                        <td class="french">50</td>
+                    </tr>
+                    <tr>
+                        <td class="hanzi">六十</td>
+                        <td class="pinyin">liùshí</td>
+                        <td class="french">60</td>
+                    </tr>
+                    <tr>
+                        <td class="hanzi">七十</td>
+                        <td class="pinyin">qīshí</td>
+                        <td class="french">70</td>
+                    </tr>
+                    <tr>
+                        <td class="hanzi">八十</td>
+                        <td class="pinyin">bāshí</td>
+                        <td class="french">80</td>
+                    </tr>
+                    <tr>
+                        <td class="hanzi">九十</td>
+                        <td class="pinyin">jiǔshí</td>
+                        <td class="french">90</td>
+                    </tr>
+                    <tr>
+                        <td class="hanzi">一百</td>
+                        <td class="pinyin">yībǎi</td>
+                        <td class="french">100</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="tip-box">
+                <h4>🎯 Formation des nombres 11-99</h4>
+                <p><strong>Formule simple :</strong> Dizaine + Unité</p>
+                <div class="example">
+                    <p>• 15 = 十五 shíwǔ (10 + 5)</p>
+                    <p>• 23 = 二十三 èrshísān (20 + 3)</p>
+                    <p>• 47 = 四十七 sìshíqī (40 + 7)</p>
+                    <p>• 89 = 八十九 bāshíjiǔ (80 + 9)</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>💯 Les Centaines et Milliers</h2>
+                <table>
+                    <tr>
+                        <th>汉字 Hanzi</th>
+                        <th>Pinyin</th>
+                        <th>Français</th>
+                        <th>Exemple</th>
+                    </tr>
+                    <tr>
+                        <td class="hanzi">百</td>
+                        <td class="pinyin">bǎi</td>
+                        <td class="french">100, cent</td>
+                        <td>一百 yībǎi (100)</td>
+                    </tr>
+                    <tr>
+                        <td class="hanzi">二百</td>
+                        <td class="pinyin">èrbǎi</td>
+                        <td class="french">200</td>
+                        <td>二百五十 èrbǎi wǔshí (250)</td>
+                    </tr>
+                    <tr>
+                        <td class="hanzi">三百</td>
+                        <td class="pinyin">sānbǎi</td>
+                        <td class="french">300</td>
+                        <td>三百六十 sānbǎi liùshí (360)</td>
+                    </tr>
+                    <tr>
+                        <td class="hanzi">五百</td>
+                        <td class="pinyin">wǔbǎi</td>
+                        <td class="french">500</td>
+                        <td>五百块 wǔbǎi kuài (500 yuans)</td>
+                    </tr>
+                    <tr>
+                        <td class="hanzi">千</td>
+                        <td class="pinyin">qiān</td>
+                        <td class="french">1000, mille</td>
+                        <td>一千 yīqiān (1000)</td>
+                    </tr>
+                </table>
+
+                <h3>📝 Nombres avec zéros</h3>
+                <div class="example">
+                    <p><strong>Attention !</strong> Quand il y a un zéro au milieu, on dit 零 líng :</p>
+                    <p>• 101 = 一百零一 yībǎi líng yī</p>
+                    <p>• 205 = 二百零五 èrbǎi líng wǔ</p>
+                    <p>• 508 = 五百零八 wǔbǎi líng bā</p>
+                    <p>• 1001 = 一千零一 yīqiān líng yī</p>
+                </div>
+
+                <h3>🔢 Nombres complexes</h3>
+                <div class="example">
+                    <p>• 234 = 二百三十四 èrbǎi sānshí sì</p>
+                    <p>• 567 = 五百六十七 wǔbǎi liùshí qī</p>
+                    <p>• 899 = 八百九十九 bābǎi jiǔshí jiǔ</p>
+                    <p>• 1000 = 一千 yīqiān</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>🛒 Vocabulaire utile avec les chiffres (HSK1/HSK2)</h2>
+                <table>
+                    <tr>
+                        <th>汉字 Hanzi</th>
+                        <th>Pinyin</th>
+                        <th>Français</th>
+                    </tr>
+                    <tr>
+                        <td class="hanzi">多少</td>
+                        <td class="pinyin">duōshao</td>
+                        <td class="french">combien ?</td>
+                    </tr>
+                    <tr>
+                        <td class="hanzi">几</td>
+                        <td class="pinyin">jǐ</td>
+                        <td class="french">combien ? (petit nombre)</td>
+                    </tr>
+                    <tr>
+                        <td class="hanzi">块</td>
+                        <td class="pinyin">kuài</td>
+                        <td class="french">yuan (monnaie)</td>
+                    </tr>
+                    <tr>
+                        <td class="hanzi">个</td>
+                        <td class="pinyin">gè</td>
+                        <td class="french">spécificatif général</td>
+                    </tr>
+                    <tr>
+                        <td class="hanzi">本</td>
+                        <td class="pinyin">běn</td>
+                        <td class="french">spécificatif pour livres</td>
+                    </tr>
+                    <tr>
+                        <td class="hanzi">岁</td>
+                        <td class="pinyin">suì</td>
+                        <td class="french">ans (âge)</td>
+                    </tr>
+                    <tr>
+                        <td class="hanzi">号</td>
+                        <td class="pinyin">hào</td>
+                        <td class="french">jour du mois, numéro</td>
+                    </tr>
+                    <tr>
+                        <td class="hanzi">第</td>
+                        <td class="pinyin">dì</td>
+                        <td class="french">préfixe ordinal (1er, 2ème...)</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="tip-box">
+                <h4>💡 Différence : 多少 (duōshao) vs 几 (jǐ)</h4>
+                <p><strong>几 jǐ</strong> : pour les petits nombres (généralement moins de 10)</p>
+                <p class="example">你有几个孩子？Nǐ yǒu jǐ ge háizi? (Combien d'enfants as-tu ?)</p>
+                <p><strong>多少 duōshao</strong> : pour les grands nombres ou quand on ne connaît pas la quantité</p>
+                <p class="example">这个多少钱？Zhège duōshao qián? (Combien ça coûte ?)</p>
+            </div>
+
+            <div class="section">
+                <h2>📱 Phrases utiles avec les chiffres</h2>
+                <div class="example">
+                    <p><strong>1.</strong> 我二十八岁。<br>
+                    <span class="pinyin">Wǒ èrshíbā suì.</span><br>
+                    <em>J'ai 28 ans.</em></p>
+                </div>
+                <div class="example">
+                    <p><strong>2.</strong> 这个多少钱？<br>
+                    <span class="pinyin">Zhège duōshao qián?</span><br>
+                    <em>Combien ça coûte ?</em></p>
+                </div>
+                <div class="example">
+                    <p><strong>3.</strong> 五十块。<br>
+                    <span class="pinyin">Wǔshí kuài.</span><br>
+                    <em>50 yuans.</em></p>
+                </div>
+                <div class="example">
+                    <p><strong>4.</strong> 我的电话号码是一三九零五六七八九一零。<br>
+                    <span class="pinyin">Wǒ de diànhuà hàomǎ shì yāo sān jiǔ líng wǔ liù qī bā jiǔ yāo líng.</span><br>
+                    <em>Mon numéro de téléphone est 139 0567 8910.</em></p>
+                    <p style="color: #f5576c; margin-top: 10px;"><strong>Note :</strong> Pour les numéros de téléphone, 1 se dit souvent 幺 yāo au lieu de 一 yī</p>
+                </div>
+                <div class="example">
+                    <p><strong>5.</strong> 今天是五月十五号。<br>
+                    <span class="pinyin">Jīntiān shì wǔ yuè shíwǔ hào.</span><br>
+                    <em>Aujourd'hui, c'est le 15 mai.</em></p>
+                </div>
+                <div class="example">
+                    <p><strong>6.</strong> 我有两本书。<br>
+                    <span class="pinyin">Wǒ yǒu liǎng běn shū.</span><br>
+                    <em>J'ai deux livres.</em></p>
+                </div>
+            </div>
+
+            <div class="exercise-box">
+                <h4>✍️ Exercices pratiques</h4>
+                <p><strong>Exercice 1 :</strong> Écris en chinois (pinyin + hanzi)</p>
+                <ol>
+                    <li>25 ans : _____________________</li>
+                    <li>150 yuans : _____________________</li>
+                    <li>Le 3 mars : _____________________</li>
+                    <li>68 personnes : _____________________</li>
+                    <li>505 : _____________________</li>
+                </ol>
+                
+                <p style="margin-top: 20px;"><strong>Exercice 2 :</strong> Traduis en français</p>
+                <ol>
+                    <li>我三十岁。_____________________</li>
+                    <li>这个八十块。_____________________</li>
+                    <li>今天是七月二十号。_____________________</li>
+                    <li>我有五个朋友。_____________________</li>
+                </ol>
+
+                <p style="margin-top: 20px;"><strong>Exercice 3 :</strong> Dis à voix haute ces nombres en chinois</p>
+                <p>13 • 47 • 99 • 102 • 250 • 888 • 1000</p>
+            </div>
+
+            <div class="tip-box">
+                <h4>🎓 Conseils de mémorisation</h4>
+                <ul>
+                    <li><strong>Pratique quotidienne :</strong> Compte en chinois pendant ton crossfit ! (1, 2, 3... yī, èr, sān...)</li>
+                    <li><strong>Prix au supermarché :</strong> Imagine les prix en chinois (Ce manga coûte 15€ = 十五块 shíwǔ kuài)</li>
+                    <li><strong>Âge des personnages :</strong> Quand tu lis un manga, pense à l'âge en chinois !</li>
+                    <li><strong>Dates importantes :</strong> Ton anniversaire, dates de voyage... dis-les en chinois !</li>
+                    <li><strong>Numéros de téléphone :</strong> Essaie de mémoriser ton numéro en chinois</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>✨ Continue comme ça Lucie ! 加油！(Jiāyóu!) ✨</p>
+            <p>Chaque nombre maîtrisé est une victoire ! 🎉</p>
+        </div>
+    </div>
+</body>
+</html>
