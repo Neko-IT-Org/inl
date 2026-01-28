@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz & Jeux - Révision JLPT N5 | John</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* HEADER */
+        .header {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+
+        .header h1 {
+            color: #2c3e50;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            color: #7f8c8d;
+            font-size: 1.2em;
+        }
+
+        /* STATS */
+        .stats-bar {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .stat-box {
+            text-align: center;
+            padding: 10px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 10px;
+            color: white;
+            min-width: 120px;
+        }
+
+        .stat-number {
+            font-size: 2em;
+            font-weight: bold;
+        }
+
+        .stat-label {
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+
+        /* GAME SELECTOR */
+        .game-selector {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+
+        .game-selector h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .game-buttons {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .game-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 20px;
+            border-radius: 15px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .game-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 25px rgba(102, 126, 234, 0.5);
+        }
+
+        .game-btn.active {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+
+        /* GAME AREA */
+        .game-area {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            min-height: 400px;
+        }
+
+        .game-area h3 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 1.8em;
+        }
+
+        /* QUIZ STYLES */
+        .question-card {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 20px;
+        }
+
+        .question-text {
+            font-size: 2em;
+            color: #c41e3a;
+            margin-bottom: 10px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .question-romaji {
+            font-size: 1.2em;
+            color: #666;
+            font-style: italic;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .option-btn {
+            background: white;
+            border: 2px solid #667eea;
+            padding: 20px;
+            border-radius: 10px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .option-btn:hover {
+            background: #667eea;
+            color: white;
+            transform: scale(1.05);
+        }
+
+        .option-btn.correct {
+            background: #4caf50;
+            color: white;
+            border-color: #4caf50;
+        }
+
+        .option-btn.incorrect {
+            background: #f44336;
+            color: white;
+            border-color: #f44336;
+        }
+
+        .option-btn:disabled {
+            cursor: not-allowed;
+            opacity: 0.7;
+        }
+
+        /* FLASHCARD STYLES */
+        .flashcard {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 20px;
+            padding: 60px 40px;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            position: relative;
+            min-height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .flashcard.flipped {
+            transform: rotateY(180deg);
+        }
+
+        .flashcard-front, .flashcard-back {
+            backface-visibility: hidden;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .flashcard-back {
+            transform: rotateY(180deg);
+        }
+
+        .flashcard-text {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+
+        .flashcard-subtitle {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        /* TYPING GAME STYLES */
+        .typing-input {
+            width: 100%;
+            padding: 20px;
+            font-size: 1.5em;
+            border: 3px solid #667eea;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .typing-input:focus {
+            outline: none;
+            border-color: #764ba2;
+        }
+
+        /* MEMORY GAME STYLES */
+        .memory-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .memory-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px 20px;
+            border-radius: 15px;
+            text-align: center;
+            cursor: pointer;
+            font-size: 1.5em;
+            transition: all 0.3s ease;
+            min-height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .memory-card:hover {
+            transform: scale(1.05);
+        }
+
+        .memory-card.flipped {
+            background: white;
+            color: #2c3e50;
+            border: 3px solid #667eea;
+        }
+
+        .memory-card.matched {
+            background: #4caf50;
+            cursor: default;
+        }
+
+        /* BUTTONS */
+        .control-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.5);
+        }
+
+        .btn-success {
+            background: #4caf50;
+            color: white;
+        }
+
+        .btn-danger {
+            background: #f44336;
+            color: white;
+        }
+
+        /* RESULT MODAL */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal.show {
+            display: flex;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            max-width: 500px;
+            width: 90%;
+        }
+
+        .modal-content h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 2em;
+        }
+
+        .modal-content .score {
+            font-size: 3em;
+            color: #667eea;
+            margin: 20px 0;
+            font-weight: bold;
+        }
+
+        /* PROGRESS BAR */
+        .progress-container {
+            width: 100%;
+            background: #e0e0e0;
+            border-radius: 10px;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 30px;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            transition: width 0.5s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8em;
+            }
+
+            .game-area {
+                padding: 20px;
+            }
+
+            .question-text {
+                font-size: 1.5em;
+            }
+
+            .options {
+                grid-template-columns: 1fr;
+            }
+
+            .memory-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 10px;
+            }
+
+            .memory-card {
+                padding: 20px 10px;
+                font-size: 1.2em;
+                min-height: 80px;
+            }
+
+            .flashcard-text {
+                font-size: 2em;
+            }
+
+            .stats-bar {
+                flex-direction: column;
+            }
+
+            .stat-box {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .memory-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* ANIMATIONS */
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .pulse {
+            animation: pulse 0.5s ease;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-10px); }
+            75% { transform: translateX(10px); }
+        }
+
+        .shake {
+            animation: shake 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        
+        <!-- HEADER -->
+        <div class="header">
+            <h1>🎮 Quiz & Jeux JLPT N5</h1>
+            <p>がんばって！(Ganbatte!) 💪</p>
+        </div>
+
+        <!-- STATS BAR -->
+        <div class="stats-bar">
+            <div class="stat-box">
+                <div class="stat-number" id="totalScore">0</div>
+                <div class="stat-label">Points Total</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number" id="correctAnswers">0</div>
+                <div class="stat-label">Bonnes Réponses</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number" id="streak">0</div>
+                <div class="stat-label">🔥 Série</div>
+            </div>
+        </div>
+
+        <!-- GAME SELECTOR -->
+        <div class="game-selector">
+            <h2>🎯 Choisis ton jeu</h2>
+            <div class="game-buttons">
+                <button class="game-btn" onclick="startQuiz()">
+                    📝 Quiz Multiple<br><small>Traduction FR → JP</small>
+                </button>
+                <button class="game-btn" onclick="startFlashcards()">
+                    🎴 Flashcards<br><small>Révision rapide</small>
+                </button>
+                <button class="game-btn" onclick="startTyping()">
+                    ⌨️ Écriture<br><small>Tape en romaji</small>
+                </button>
+                <button class="game-btn" onclick="startMemory()">
+                    🧠 Memory<br><small>Trouve les paires</small>
+                </button>
+            </div>
+        </div>
+
+        <!-- GAME AREA -->
+        <div class="game-area" id="gameArea">
+            <h3>👋 Bienvenue !</h3>
+            <p style="text-align: center; color: #7f8c8d; font-size: 1.2em; margin-top: 20px;">
+                Choisis un jeu ci-dessus pour commencer à réviser ton vocabulaire JLPT N5 ! 🎌
+            </p>
+            <p style="text-align: center; color: #7f8c8d; margin-top: 20px;">
+                Tous les mots des leçons <strong>Maison</strong> et <strong>Nourriture</strong> sont inclus ! 📚
+            </p>
+        </div>
+
+    </div>
+
+    <!-- RESULT MODAL -->
+    <div class="modal" id="resultModal">
+        <div class="modal-content">
+            <h2>🎉 Bravo !</h2>
+            <div class="score" id="modalScore">0/10</div>
+            <p id="modalMessage" style="font-size: 1.2em; color: #7f8c8d; margin: 20px 0;"></p>
+            <div class="control-buttons">
+                <button class="btn btn-primary" onclick="closeModal()">Continuer</button>
+                <button class="btn btn-success" onclick="restartGame()">Recommencer</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // VOCABULARY DATABASE (from both lessons)
+        const vocabulary = {
+            maison: [
+                { jp: 'いえ', romaji: 'ie', fr: 'maison' },
+                { jp: 'へや', romaji: 'heya', fr: 'chambre' },
+                { jp: 'だいどころ', romaji: 'daidokoro', fr: 'cuisine' },
+                { jp: 'おふろ', romaji: 'ofuro', fr: 'salle de bain' },
+                { jp: 'にわ', romaji: 'niwa', fr: 'jardin' },
+                { jp: 'トイレ', romaji: 'toire', fr: 'toilettes' },
+                { jp: 'げんかん', romaji: 'genkan', fr: 'entrée' },
+                { jp: 'おおきい', romaji: 'ōkii', fr: 'grand' },
+                { jp: 'ちいさい', romaji: 'chiisai', fr: 'petit' },
+                { jp: 'あたらしい', romaji: 'atarashii', fr: 'nouveau' },
+                { jp: 'ふるい', romaji: 'furui', fr: 'ancien' },
+                { jp: 'ひろい', romaji: 'hiroi', fr: 'spacieux' },
+                { jp: 'あかるい', romaji: 'akarui', fr: 'lumineux' },
+                { jp: 'くらい', romaji: 'kurai', fr: 'sombre' },
+                { jp: 'きれい', romaji: 'kirei', fr: 'propre/joli' },
+                { jp: 'しずか', romaji: 'shizuka', fr: 'calme' },
+                { jp: 'べんり', romaji: 'benri', fr: 'pratique' },
+                { jp: 'ちかい', romaji: 'chikai', fr: 'proche' },
+                { jp: 'とおい', romaji: 'tōi', fr: 'loin' },
+                { jp: 'えき', romaji: 'eki', fr: 'gare' },
+                { jp: 'がっこう', romaji: 'gakkō', fr: 'école' },
+                { jp: 'スーパー', romaji: 'sūpā', fr: 'supermarché' },
+                { jp: 'こうえん', romaji: 'kōen', fr: 'parc' },
+            ],
+            nourriture: [
+                { jp: 'あさごはん', romaji: 'asagohan', fr: 'petit-déjeuner' },
+                { jp: 'ひるごはん', romaji: 'hirugohan', fr: 'déjeuner' },
+                { jp: 'ばんごはん', romaji: 'bangohan', fr: 'dîner' },
+                { jp: 'ごはん', romaji: 'gohan', fr: 'riz/repas' },
+                { jp: 'すし', romaji: 'sushi', fr: 'sushi' },
+                { jp: 'ラーメン', romaji: 'rāmen', fr: 'ramen' },
+                { jp: 'カレー', romaji: 'karē', fr: 'curry' },
+                { jp: 'パン', romaji: 'pan', fr: 'pain' },
+                { jp: 'にく', romaji: 'niku', fr: 'viande' },
+                { jp: 'さかな', romaji: 'sakana', fr: 'poisson' },
+                { jp: 'たまご', romaji: 'tamago', fr: 'œuf' },
+                { jp: 'やさい', romaji: 'yasai', fr: 'légume' },
+                { jp: 'くだもの', romaji: 'kudamono', fr: 'fruit' },
+                { jp: 'りんご', romaji: 'ringo', fr: 'pomme' },
+                { jp: 'みず', romaji: 'mizu', fr: 'eau' },
+                { jp: 'おちゃ', romaji: 'ocha', fr: 'thé' },
+                { jp: 'コーヒー', romaji: 'kōhī', fr: 'café' },
+                { jp: 'おいしい', romaji: 'oishii', fr: 'délicieux' },
+                { jp: 'あまい', romaji: 'amai', fr: 'sucré' },
+                { jp: 'からい', romaji: 'karai', fr: 'épicé' },
+                { jp: 'たべます', romaji: 'tabemasu', fr: 'manger' },
+                { jp: 'のみます', romaji: 'nomimasu', fr: 'boire' },
+                { jp: 'すき', romaji: 'suki', fr: 'aimer' },
+                { jp: 'きらい', romaji: 'kirai', fr: 'ne pas aimer' },
+            ]
+        };
+
+        // Combine all vocabulary
+        const allWords = [...vocabulary.maison, ...vocabulary.nourriture];
+
+        // Game state
+        let currentGame = null;
+        let currentQuestion = 0;
+        let score = 0;
+        let totalCorrect = 0;
+        let streak = 0;
+        let gameWords = [];
+
+        // Stats
+        function updateStats() {
+            document.getElementById('totalScore').textContent = score;
+            document.getElementById('correctAnswers').textContent = totalCorrect;
+            document.getElementById('streak').textContent = streak;
+        }
+
+        // Shuffle array
+        function shuffle(array) {
+            return array.sort(() => Math.random() - 0.5);
+        }
+
+        // Get random words
+        function getRandomWords(count) {
+            return shuffle([...allWords]).slice(0, count);
+        }
+
+        // ===== QUIZ GAME =====
+        function startQuiz() {
+            currentGame = 'quiz';
+            currentQuestion = 0;
+            gameWords = getRandomWords(10);
+            showQuestion();
+        }
+
+        function showQuestion() {
+            if (currentQuestion >= gameWords.length) {
+                endGame();
+                return;
+            }
+
+            const word = gameWords[currentQuestion];
+            const wrongAnswers = shuffle([...allWords])
+                .filter(w => w.fr !== word.fr)
+                .slice(0, 3);
+            const options = shuffle([word, ...wrongAnswers]);
+
+            const html = `
+                <h3>📝 Question ${currentQuestion + 1}/${gameWords.length}</h3>
+                <div class="progress-container">
+                    <div class="progress-bar" style="width: ${(currentQuestion / gameWords.length) * 100}%">
+                        ${Math.round((currentQuestion / gameWords.length) * 100)}%
+                    </div>
+                </div>
+                <div class="question-card">
+                    <div class="question-text">${word.jp}</div>
+                    <div class="question-romaji">${word.romaji}</div>
+                    <p style="text-align: center; font-size: 1.2em; color: #2c3e50; margin-top: 10px;">
+                        Comment dit-on en français ?
+                    </p>
+                    <div class="options">
+                        ${options.map((opt, i) => `
+                            <button class="option-btn" onclick="checkAnswer('${opt.fr}', '${word.fr}', this)">
+                                ${opt.fr}
+                            </button>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+
+            document.getElementById('gameArea').innerHTML = html;
+        }
+
+        function checkAnswer(selected, correct, button) {
+            const buttons = document.querySelectorAll('.option-btn');
+            buttons.forEach(btn => btn.disabled = true);
+
+            if (selected === correct) {
+                button.classList.add('correct');
+                button.classList.add('pulse');
+                score += 10;
+                streak++;
+                totalCorrect++;
+                updateStats();
+                
+                setTimeout(() => {
+                    currentQuestion++;
+                    showQuestion();
+                }, 1000);
+            } else {
+                button.classList.add('incorrect');
+                button.classList.add('shake');
+                streak = 0;
+                updateStats();
+
+                // Show correct answer
+                buttons.forEach(btn => {
+                    if (btn.textContent.trim() === correct) {
+                        btn.classList.add('correct');
+                    }
+                });
+
+                setTimeout(() => {
+                    currentQuestion++;
+                    showQuestion();
+                }, 2000);
+            }
+        }
+
+        // ===== FLASHCARDS GAME =====
+        let flashcardIndex = 0;
+        let isFlipped = false;
+
+        function startFlashcards() {
+            currentGame = 'flashcard';
+            flashcardIndex = 0;
+            gameWords = shuffle([...allWords]);
+            showFlashcard();
+        }
+
+        function showFlashcard() {
+            if (flashcardIndex >= gameWords.length) {
+                flashcardIndex = 0;
+                gameWords = shuffle([...allWords]);
+            }
+
+            const word = gameWords[flashcardIndex];
+            isFlipped = false;
+
+            const html = `
+                <h3>🎴 Flashcard ${flashcardIndex + 1}/${gameWords.length}</h3>
+                <p style="text-align: center; color: #7f8c8d; margin-bottom: 20px;">
+                    Clique sur la carte pour voir la réponse
+                </p>
+                <div class="flashcard" id="flashcard" onclick="flipCard()">
+                    <div class="flashcard-front">
+                        <div class="flashcard-text">${word.jp}</div>
+                        <div class="flashcard-subtitle">${word.romaji}</div>
+                    </div>
+                    <div class="flashcard-back">
+                        <div class="flashcard-text">${word.fr}</div>
+                        <div class="flashcard-subtitle">Traduction</div>
+                    </div>
+                </div>
+                <div class="control-buttons">
+                    <button class="btn btn-danger" onclick="nextFlashcard(false)">❌ Je ne sais pas</button>
+                    <button class="btn btn-success" onclick="nextFlashcard(true)">✅ Je sais !</button>
+                </div>
+            `;
+
+            document.getElementById('gameArea').innerHTML = html;
+        }
+
+        function flipCard() {
+            const card = document.getElementById('flashcard');
+            isFlipped = !isFlipped;
+            if (isFlipped) {
+                card.classList.add('flipped');
+            } else {
+                card.classList.remove('flipped');
+            }
+        }
+
+        function nextFlashcard(knew) {
+            if (knew) {
+                score += 5;
+                streak++;
+                totalCorrect++;
+                updateStats();
+            } else {
+                streak = 0;
+                updateStats();
+            }
+            flashcardIndex++;
+            showFlashcard();
+        }
+
+        // ===== TYPING GAME =====
+        let typingQuestion = 0;
+
+        function startTyping() {
+            currentGame = 'typing';
+            typingQuestion = 0;
+            gameWords = getRandomWords(10);
+            showTypingQuestion();
+        }
+
+        function showTypingQuestion() {
+            if (typingQuestion >= gameWords.length) {
+                endGame();
+                return;
+            }
+
+            const word = gameWords[typingQuestion];
+
+            const html = `
+                <h3>⌨️ Écriture ${typingQuestion + 1}/${gameWords.length}</h3>
+                <div class="progress-container">
+                    <div class="progress-bar" style="width: ${(typingQuestion / gameWords.length) * 100}%">
+                        ${Math.round((typingQuestion / gameWords.length) * 100)}%
+                    </div>
+                </div>
+                <div class="question-card">
+                    <p style="text-align: center; font-size: 1.3em; color: #2c3e50; margin-bottom: 20px;">
+                        Comment dit-on en romaji ?
+                    </p>
+                    <div class="question-text">${word.jp}</div>
+                    <p style="text-align: center; color: #7f8c8d; margin: 10px 0;">
+                        Français : <strong>${word.fr}</strong>
+                    </p>
+                    <input type="text" 
+                           class="typing-input" 
+                           id="typingInput" 
+                           placeholder="Tape en romaji..."
+                           autocomplete="off"
+                           onkeypress="if(event.key==='Enter') checkTyping()">
+                    <div class="control-buttons">
+                        <button class="btn btn-primary" onclick="checkTyping()">✓ Vérifier</button>
+                        <button class="btn btn-danger" onclick="skipTyping()">→ Passer</button>
+                    </div>
+                    <div id="typingFeedback" style="text-align: center; margin-top: 20px; font-size: 1.2em;"></div>
+                </div>
+            `;
+
+            document.getElementById('gameArea').innerHTML = html;
+            document.getElementById('typingInput').focus();
+        }
+
+        function checkTyping() {
+            const input = document.getElementById('typingInput');
+            const userAnswer = input.value.trim().toLowerCase();
+            const correctAnswer = gameWords[typingQuestion].romaji.toLowerCase();
+            const feedback = document.getElementById('typingFeedback');
+
+            if (userAnswer === correctAnswer) {
+                feedback.innerHTML = '<span style="color: #4caf50;">✅ Correct !</span>';
+                score += 10;
+                streak++;
+                totalCorrect++;
+                updateStats();
+                
+                setTimeout(() => {
+                    typingQuestion++;
+                    showTypingQuestion();
+                }, 1500);
+            } else {
+                feedback.innerHTML = `<span style="color: #f44336;">❌ Non. La réponse était : <strong>${gameWords[typingQuestion].romaji}</strong></span>`;
+                streak = 0;
+                updateStats();
+                input.disabled = true;
+                
+                setTimeout(() => {
+                    typingQuestion++;
+                    showTypingQuestion();
+                }, 2500);
+            }
+        }
+
+        function skipTyping() {
+            streak = 0;
+            updateStats();
+            typingQuestion++;
+            showTypingQuestion();
+        }
+
+        // ===== MEMORY GAME =====
+        let memoryCards = [];
+        let flippedCards = [];
+        let matchedPairs = 0;
+
+        function startMemory() {
+            currentGame = 'memory';
+            matchedPairs = 0;
+            flippedCards = [];
+            
+            // Get 8 words (16 cards)
+            const words = getRandomWords(8);
+            memoryCards = [];
+            
+            words.forEach(word => {
+                memoryCards.push({ text: word.jp, match: word.fr, id: word.jp });
+                memoryCards.push({ text: word.fr, match: word.jp, id: word.jp });
+            });
+            
+            memoryCards = shuffle(memoryCards);
+            showMemory();
+        }
+
+        function showMemory() {
+            const html = `
+                <h3>🧠 Memory Game</h3>
+                <p style="text-align: center; color: #7f8c8d; margin-bottom: 20px;">
+                    Trouve les paires ! (${matchedPairs}/8)
+                </p>
+                <div class="memory-grid">
+                    ${memoryCards.map((card, i) => `
+                        <div class="memory-card" id="card${i}" onclick="flipMemoryCard(${i})">
+                            ?
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+
+            document.getElementById('gameArea').innerHTML = html;
+        }
+
+        function flipMemoryCard(index) {
+            const card = document.getElementById('card' + index);
+            
+            if (card.classList.contains('flipped') || 
+                card.classList.contains('matched') || 
+                flippedCards.length >= 2) {
+                return;
+            }
+
+            card.classList.add('flipped');
+            card.textContent = memoryCards[index].text;
+            flippedCards.push(index);
+
+            if (flippedCards.length === 2) {
+                setTimeout(checkMemoryMatch, 1000);
+            }
+        }
+
+        function checkMemoryMatch() {
+            const [index1, index2] = flippedCards;
+            const card1 = document.getElementById('card' + index1);
+            const card2 = document.getElementById('card' + index2);
+            
+            if (memoryCards[index1].id === memoryCards[index2].id) {
+                // Match!
+                card1.classList.add('matched');
+                card2.classList.add('matched');
+                matchedPairs++;
+                score += 20;
+                streak++;
+                totalCorrect++;
+                updateStats();
+
+                if (matchedPairs === 8) {
+                    setTimeout(endGame, 500);
+                }
+            } else {
+                // No match
+                card1.classList.remove('flipped');
+                card2.classList.remove('flipped');
+                card1.textContent = '?';
+                card2.textContent = '?';
+                streak = 0;
+                updateStats();
+            }
+
+            flippedCards = [];
+            showMemory();
+        }
+
+        // ===== END GAME =====
+        function endGame() {
+            const modal = document.getElementById('resultModal');
+            const scoreElement = document.getElementById('modalScore');
+            const messageElement = document.getElementById('modalMessage');
+
+            if (currentGame === 'quiz' || currentGame === 'typing') {
+                const percentage = (totalCorrect / gameWords.length) * 100;
+                scoreElement.textContent = `${totalCorrect}/${gameWords.length}`;
+                
+                if (percentage === 100) {
+                    messageElement.textContent = '🎉 Parfait ! Tu maîtrises ce vocabulaire !';
+                } else if (percentage >= 80) {
+                    messageElement.textContent = '👏 Excellent travail ! Continue comme ça !';
+                } else if (percentage >= 60) {
+                    messageElement.textContent = '👍 Bien joué ! Encore un petit effort !';
+                } else {
+                    messageElement.textContent = '💪 Continue à réviser, tu vas y arriver !';
+                }
+            } else if (currentGame === 'memory') {
+                scoreElement.textContent = '8/8';
+                messageElement.textContent = '🎉 Toutes les paires trouvées ! Excellent !';
+            }
+
+            modal.classList.add('show');
+        }
+
+        function closeModal() {
+            document.getElementById('resultModal').classList.remove('show');
+        }
+
+        function restartGame() {
+            closeModal();
+            currentQuestion = 0;
+            typingQuestion = 0;
+            
+            if (currentGame === 'quiz') startQuiz();
+            else if (currentGame === 'flashcard') startFlashcards();
+            else if (currentGame === 'typing') startTyping();
+            else if (currentGame === 'memory') startMemory();
+        }
+
+        // Load stats from localStorage
+        window.onload = function() {
+            const saved = localStorage.getItem('jlptStats');
+            if (saved) {
+                const stats = JSON.parse(saved);
+                score = stats.score || 0;
+                totalCorrect = stats.correct || 0;
+                updateStats();
+            }
+        };
+
+        // Save stats
+        window.onbeforeunload = function() {
+            localStorage.setItem('jlptStats', JSON.stringify({
+                score: score,
+                correct: totalCorrect
+            }));
+        };
+    </script>
+</body>
+</html>
