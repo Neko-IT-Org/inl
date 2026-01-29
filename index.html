@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notre Apprentissage des Langues 🌏</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        /* HEADER */
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            animation: fadeInDown 1s ease;
+        }
+
+        .header h1 {
+            color: white;
+            font-size: 3.5em;
+            margin-bottom: 15px;
+            text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .header .subtitle {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.5em;
+            font-weight: 300;
+        }
+
+        .emoji-hearts {
+            font-size: 2em;
+            margin: 20px 0;
+        }
+
+        /* LANGUAGE CARDS CONTAINER */
+        .cards-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        /* LANGUAGE CARD */
+        .language-card {
+            background: white;
+            border-radius: 30px;
+            padding: 50px 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            transition: all 0.5s ease;
+            position: relative;
+            overflow: hidden;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            animation: fadeInUp 1s ease;
+        }
+
+        .language-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, transparent 0%, rgba(102, 126, 234, 0.1) 100%);
+            z-index: 0;
+            transition: all 0.5s ease;
+        }
+
+        .language-card:hover {
+            transform: translateY(-20px) scale(1.05);
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
+        }
+
+        .language-card:hover::before {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.2) 0%, rgba(118, 75, 162, 0.2) 100%);
+        }
+
+        /* JAPANESE CARD - Red theme */
+        .japanese-card {
+            border-top: 8px solid #c41e3a;
+        }
+
+        .japanese-card:hover {
+            border-top-color: #d32f2f;
+        }
+
+        /* CHINESE CARD - Gold theme */
+        .chinese-card {
+            border-top: 8px solid #d4af37;
+        }
+
+        .chinese-card:hover {
+            border-top-color: #ffd700;
+        }
+
+        .card-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .flag {
+            font-size: 5em;
+            margin-bottom: 20px;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        .language-title {
+            font-size: 2.5em;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .language-native {
+            font-size: 3em;
+            margin: 20px 0;
+            font-weight: bold;
+        }
+
+        .japanese-card .language-native {
+            color: #c41e3a;
+        }
+
+        .chinese-card .language-native {
+            color: #d4af37;
+        }
+
+        .learner-info {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 25px;
+            margin: 20px 0;
+            font-size: 1.2em;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            margin: 25px 0;
+            width: 100%;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2em;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .stat-label {
+            font-size: 0.9em;
+            color: #7f8c8d;
+            margin-top: 5px;
+        }
+
+        .card-button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 18px 45px;
+            border-radius: 30px;
+            font-size: 1.3em;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .card-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 12px 30px rgba(102, 126, 234, 0.6);
+        }
+
+        /* FOOTER */
+        .footer {
+            text-align: center;
+            margin-top: 60px;
+            color: white;
+            animation: fadeIn 2s ease;
+        }
+
+        .footer p {
+            font-size: 1.2em;
+            margin: 10px 0;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .hearts-animation {
+            font-size: 2em;
+            margin: 20px 0;
+            animation: heartbeat 1.5s infinite;
+        }
+
+        @keyframes heartbeat {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            25% {
+                transform: scale(1.2);
+            }
+
+            50% {
+                transform: scale(1);
+            }
+        }
+
+        /* DECORATIVE ELEMENTS */
+        .floating-hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .heart {
+            position: absolute;
+            font-size: 2em;
+            opacity: 0.3;
+            animation: float 15s infinite ease-in-out;
+        }
+
+        .heart:nth-child(1) {
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .heart:nth-child(2) {
+            left: 25%;
+            animation-delay: 3s;
+        }
+
+        .heart:nth-child(3) {
+            left: 40%;
+            animation-delay: 6s;
+        }
+
+        .heart:nth-child(4) {
+            left: 60%;
+            animation-delay: 2s;
+        }
+
+        .heart:nth-child(5) {
+            left: 75%;
+            animation-delay: 5s;
+        }
+
+        .heart:nth-child(6) {
+            left: 90%;
+            animation-delay: 4s;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 0.3;
+            }
+
+            90% {
+                opacity: 0.3;
+            }
+
+            100% {
+                transform: translateY(-100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* ANIMATIONS */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 968px) {
+            .cards-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .header h1 {
+                font-size: 2.5em;
+            }
+
+            .language-card {
+                padding: 40px 30px;
+            }
+
+            .flag {
+                font-size: 4em;
+            }
+
+            .language-title {
+                font-size: 2em;
+            }
+
+            .language-native {
+                font-size: 2.5em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+
+            .header h1 {
+                font-size: 2em;
+            }
+
+            .header .subtitle {
+                font-size: 1.2em;
+            }
+
+            .language-card {
+                padding: 30px 20px;
+            }
+
+            .flag {
+                font-size: 3em;
+            }
+
+            .language-title {
+                font-size: 1.5em;
+            }
+
+            .language-native {
+                font-size: 2em;
+            }
+
+            .stats {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .card-button {
+                padding: 15px 35px;
+                font-size: 1.1em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- FLOATING HEARTS BACKGROUND -->
+    <div class="floating-hearts">
+        <div class="heart">💕</div>
+        <div class="heart">❤️</div>
+        <div class="heart">💖</div>
+        <div class="heart">💝</div>
+        <div class="heart">💗</div>
+        <div class="heart">💓</div>
+    </div>
+
+    <div class="container">
+
+        <!-- HEADER -->
+        <div class="header">
+            <h1>🌏 Notre Aventure Linguistique</h1>
+            <p class="subtitle">Apprendre ensemble, grandir ensemble</p>
+            <div class="emoji-hearts">👨‍❤️‍👩</div>
+        </div>
+
+        <!-- LANGUAGE CARDS -->
+        <div class="cards-container">
+
+            <!-- JAPANESE CARD (John) -->
+            <a href="japonais/index.html" class="language-card japanese-card" style="animation-delay: 0.2s;">
+                <div class="card-content">
+                    <div class="flag">🇯🇵</div>
+                    <h2 class="language-title">Japonais</h2>
+                    <div class="language-native">日本語</div>
+                    <p style="color: #7f8c8d; font-size: 1.1em; margin: 10px 0;">
+                        Nihongo
+                    </p>
+
+                    <div class="learner-info">
+                        👨 John
+                    </div>
+
+                    <div class="stats">
+                        <div class="stat-item">
+                            <div class="stat-number">N5</div>
+                            <div class="stat-label">Niveau JLPT</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">3</div>
+                            <div class="stat-label">Leçons</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">47+</div>
+                            <div class="stat-label">Mots</div>
+                        </div>
+                    </div>
+
+                    <p style="color: #2c3e50; margin: 20px 0; line-height: 1.6;">
+                        📚 Maison & Localisation<br>
+                        🍱 Nourriture & Restaurant<br>
+                        🎮 Quiz & Jeux Interactifs
+                    </p>
+
+                    <button class="card-button">
+                        がんばって！→
+                    </button>
+                </div>
+            </a>
+
+            <!-- CHINESE CARD (Wife) -->
+            <a href="chinois/index.html" class="language-card chinese-card" style="animation-delay: 0.4s;">
+                <div class="card-content">
+                    <div class="flag">🇨🇳</div>
+                    <h2 class="language-title">Chinois</h2>
+                    <div class="language-native">中文</div>
+                    <p style="color: #7f8c8d; font-size: 1.1em; margin: 10px 0;">
+                        Zhōngwén
+                    </p>
+
+                    <div class="learner-info">
+                        👩 Lucie
+                    </div>
+
+                    <div class="stats">
+                        <div class="stat-item">
+                            <div class="stat-number">HSK</div>
+                            <div class="stat-label">Programme</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">∞</div>
+                            <div class="stat-label">Leçons</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">∞</div>
+                            <div class="stat-label">Mots</div>
+                        </div>
+                    </div>
+
+                    <p style="color: #2c3e50; margin: 20px 0; line-height: 1.6;">
+                        🎯 Cours de chinois<br>
+                        📖 Vocabulaire & Grammaire<br>
+                        ✨ Exercices & Pratique
+                    </p>
+
+                    <button class="card-button">
+                        加油！→
+                    </button>
+                </div>
+            </a>
+
+        </div>
+
+        <!-- FOOTER -->
+        <div class="footer">
+            <div class="hearts-animation">💕 ❤️ 💖</div>
+            <p><strong>Apprendre une langue, c'est découvrir un nouveau monde</strong></p>
+            <p style="font-size: 1em; margin-top: 20px; opacity: 0.9;">
+                🇧🇪 Belgique → 🇯🇵 Japon & 🇨🇳 Chine
+            </p>
+            <p style="font-size: 0.9em; margin-top: 30px; opacity: 0.8;">
+                Créé avec 💜 par Claude | 2026
+            </p>
+        </div>
+
+    </div>
+
+    <script>
+        // Add hover sound effect (optional)
+        const cards = document.querySelectorAll('.language-card');
+
+        cards.forEach(card => {
+            card.addEventListener('mouseenter', function () {
+                this.style.transform = 'translateY(-20px) scale(1.05)';
+            });
+
+            card.addEventListener('mouseleave', function () {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Add click animation
+        cards.forEach(card => {
+            card.addEventListener('click', function (e) {
+                this.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    this.style.transform = 'translateY(-20px) scale(1.05)';
+                }, 100);
+            });
+        });
+    </script>
+</body>
+
+</html>
