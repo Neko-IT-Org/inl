@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compteurs & Âges - JLPT N5</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 1.5cm;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 21cm;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        
+        .container {
+            background: white;
+            padding: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #1976d2;
+            text-align: center;
+            border-bottom: 3px solid #1976d2;
+            padding-bottom: 15px;
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #666;
+            font-style: italic;
+            margin-bottom: 30px;
+        }
+        
+        h2 {
+            color: #0288d1;
+            background: linear-gradient(to right, #e1f5fe, transparent);
+            padding: 10px 15px;
+            border-left: 5px solid #0288d1;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        
+        h3 {
+            color: #0277bd;
+            margin-top: 20px;
+            padding-bottom: 5px;
+            border-bottom: 2px dotted #0277bd;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        th {
+            background: linear-gradient(135deg, #1976d2 0%, #0288d1 100%);
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: bold;
+        }
+        
+        td {
+            padding: 10px 12px;
+            border: 1px solid #ddd;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #e3f2fd;
+        }
+        
+        tr:hover {
+            background-color: #bbdefb;
+        }
+        
+        .hiragana {
+            font-size: 1.4em;
+            font-weight: bold;
+            color: #1976d2;
+        }
+        
+        .romaji {
+            color: #666;
+            font-style: italic;
+            font-size: 0.95em;
+        }
+        
+        .exemple {
+            background: #e8f5e9;
+            border-left: 4px solid #4caf50;
+            padding: 12px 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        
+        .exemple-titre {
+            font-weight: bold;
+            color: #2e7d32;
+            margin-bottom: 8px;
+        }
+        
+        .phrase-jp {
+            color: #1976d2;
+            font-size: 1.2em;
+            margin: 5px 0;
+            font-weight: 500;
+        }
+        
+        .phrase-romaji {
+            color: #999;
+            font-size: 0.8em;
+            font-style: italic;
+            margin: 2px 0 8px 0;
+        }
+        
+        .phrase-fr {
+            color: #555;
+            font-style: italic;
+        }
+        
+        .astuce {
+            background: #fff9c4;
+            border-left: 4px solid #fbc02d;
+            padding: 12px 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        
+        .astuce-titre {
+            font-weight: bold;
+            color: #f57f17;
+            margin-bottom: 5px;
+        }
+        
+        .attention {
+            background: #ffebee;
+            border-left: 4px solid #f44336;
+            padding: 12px 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        
+        .attention-titre {
+            font-weight: bold;
+            color: #c62828;
+            margin-bottom: 5px;
+        }
+        
+        .grammar-box {
+            background: #f3e5f5;
+            border: 2px solid #9c27b0;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+        }
+        
+        .grammar-title {
+            color: #7b1fa2;
+            font-weight: bold;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+        
+        .counter-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .counter-box {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            border: 2px solid #1976d2;
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+        }
+        
+        .counter-box h4 {
+            color: #1976d2;
+            margin-bottom: 10px;
+        }
+        
+        .exercice {
+            background: #fff3e0;
+            border: 2px dashed #ff9800;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        
+        .exercice-titre {
+            font-weight: bold;
+            color: #e65100;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+        
+        .section-divider {
+            height: 2px;
+            background: linear-gradient(to right, transparent, #1976d2, transparent);
+            margin: 30px 0;
+        }
+        
+        .highlight {
+            background: #ffeb3b;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+        
+        .number-special {
+            background: #fff3e0;
+            border: 2px solid #ff9800;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        /* RESPONSIVE */
+        @media (max-width: 1024px) {
+            body {
+                padding: 15px;
+            }
+            
+            .container {
+                padding: 25px;
+            }
+            
+            h1 {
+                font-size: 1.8em;
+            }
+            
+            .counter-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            
+            .container {
+                padding: 15px;
+            }
+            
+            h1 {
+                font-size: 1.5em;
+            }
+            
+            h2 {
+                font-size: 1.3em;
+            }
+            
+            table {
+                font-size: 0.85em;
+            }
+            
+            .phrase-jp {
+                font-size: 1.1em;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.3em;
+            }
+            
+            table {
+                font-size: 0.75em;
+            }
+            
+            th, td {
+                padding: 6px 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔢 Compteurs & Âges 📊</h1>
+        <p class="subtitle">Récapitulatif JLPT N5 - Compter en japonais</p>
+
+        <!-- SECTION 1: NOMBRES DE BASE -->
+        <h2>🔢 1. Les Nombres de Base (0-10)</h2>
+        
+        <table>
+            <tr>
+                <th>Nombre</th>
+                <th>Hiragana</th>
+                <th>Romaji</th>
+                <th>Kanji</th>
+            </tr>
+            <tr>
+                <td>0</td>
+                <td class="hiragana">ぜろ / れい</td>
+                <td class="romaji">zero / rei</td>
+                <td>零</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td class="hiragana">いち</td>
+                <td class="romaji">ichi</td>
+                <td>一</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td class="hiragana">に</td>
+                <td class="romaji">ni</td>
+                <td>二</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td class="hiragana">さん</td>
+                <td class="romaji">san</td>
+                <td>三</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td class="hiragana">し / よん</td>
+                <td class="romaji">shi / yon</td>
+                <td>四</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td class="hiragana">ご</td>
+                <td class="romaji">go</td>
+                <td>五</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td class="hiragana">ろく</td>
+                <td class="romaji">roku</td>
+                <td>六</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td class="hiragana">しち / なな</td>
+                <td class="romaji">shichi / nana</td>
+                <td>七</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td class="hiragana">はち</td>
+                <td class="romaji">hachi</td>
+                <td>八</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td class="hiragana">きゅう / く</td>
+                <td class="romaji">kyū / ku</td>
+                <td>九</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td class="hiragana">じゅう</td>
+                <td class="romaji">jū</td>
+                <td>十</td>
+            </tr>
+        </table>
+
+        <div class="attention">
+            <div class="attention-titre">⚠️ Nombres avec double lecture</div>
+            <ul style="margin-top: 10px; line-height: 1.8;">
+                <li><strong>4</strong> → し (shi) ou よん (yon) - On utilise généralement <strong>よん</strong></li>
+                <li><strong>7</strong> → しち (shichi) ou なな (nana) - On utilise généralement <strong>なな</strong></li>
+                <li><strong>9</strong> → く (ku) ou きゅう (kyū) - On utilise généralement <strong>きゅう</strong></li>
+            </ul>
+            <p style="margin-top: 10px;"><em>Pourquoi ?</em> し (shi) ressemble au mot "mort" (し - shi), donc on préfère よん !</p>
+        </div>
+
+        <h3>🔢 Nombres de 11 à 100</h3>
+        
+        <table>
+            <tr>
+                <th>Nombre</th>
+                <th>Hiragana</th>
+                <th>Romaji</th>
+                <th>Construction</th>
+            </tr>
+            <tr>
+                <td>11</td>
+                <td class="hiragana">じゅういち</td>
+                <td class="romaji">jū-ichi</td>
+                <td>10 + 1</td>
+            </tr>
+            <tr>
+                <td>12</td>
+                <td class="hiragana">じゅうに</td>
+                <td class="romaji">jū-ni</td>
+                <td>10 + 2</td>
+            </tr>
+            <tr>
+                <td>20</td>
+                <td class="hiragana">にじゅう</td>
+                <td class="romaji">ni-jū</td>
+                <td>2 × 10</td>
+            </tr>
+            <tr>
+                <td>25</td>
+                <td class="hiragana">にじゅうご</td>
+                <td class="romaji">ni-jū-go</td>
+                <td>2 × 10 + 5</td>
+            </tr>
+            <tr>
+                <td>30</td>
+                <td class="hiragana">さんじゅう</td>
+                <td class="romaji">san-jū</td>
+                <td>3 × 10</td>
+            </tr>
+            <tr>
+                <td>50</td>
+                <td class="hiragana">ごじゅう</td>
+                <td class="romaji">go-jū</td>
+                <td>5 × 10</td>
+            </tr>
+            <tr>
+                <td>100</td>
+                <td class="hiragana">ひゃく</td>
+                <td class="romaji">hyaku</td>
+                <td>百</td>
+            </tr>
+        </table>
+
+        <div class="astuce">
+            <div class="astuce-titre">💡 Système logique !</div>
+            <p>Les nombres japonais sont très logiques :</p>
+            <ul style="margin-top: 10px;">
+                <li>11 = じゅう (10) + いち (1) = じゅういち</li>
+                <li>25 = に (2) + じゅう (10) + ご (5) = にじゅうご</li>
+                <li>48 = よん (4) + じゅう (10) + はち (8) = よんじゅうはち</li>
+            </ul>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <!-- SECTION 2: COMPTEUR GÉNÉRIQUE -->
+        <h2>📊 2. Compteur Générique : つ (tsu)</h2>
+
+        <div class="grammar-box">
+            <div class="grammar-title">🎯 つ (tsu) - Pour compter les objets en général (1-10)</div>
+            <p>C'est le compteur le plus simple et le plus utilisé pour les objets !</p>
+        </div>
+        
+        <table>
+            <tr>
+                <th>Nombre</th>
+                <th>Hiragana</th>
+                <th>Romaji</th>
+                <th>Usage</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td class="hiragana">ひとつ</td>
+                <td class="romaji">hitotsu</td>
+                <td>Un (objet)</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td class="hiragana">ふたつ</td>
+                <td class="romaji">futatsu</td>
+                <td>Deux (objets)</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td class="hiragana">みっつ</td>
+                <td class="romaji">mittsu</td>
+                <td>Trois (objets)</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td class="hiragana">よっつ</td>
+                <td class="romaji">yottsu</td>
+                <td>Quatre (objets)</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td class="hiragana">いつつ</td>
+                <td class="romaji">itsutsu</td>
+                <td>Cinq (objets)</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td class="hiragana">むっつ</td>
+                <td class="romaji">muttsu</td>
+                <td>Six (objets)</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td class="hiragana">ななつ</td>
+                <td class="romaji">nanatsu</td>
+                <td>Sept (objets)</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td class="hiragana">やっつ</td>
+                <td class="romaji">yattsu</td>
+                <td>Huit (objets)</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td class="hiragana">ここのつ</td>
+                <td class="romaji">kokonotsu</td>
+                <td>Neuf (objets)</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td class="hiragana">とお</td>
+                <td class="romaji">tō</td>
+                <td>Dix (objets)</td>
+            </tr>
+        </table>
+
+        <div class="exemple">
+            <div class="exemple-titre">✏️ Exemples avec vocabulaire connu</div>
+            
+            <p class="phrase-jp">りんごをひとつください。</p>
+            <p class="phrase-romaji">Ringo wo hitotsu kudasai.</p>
+            <p class="phrase-fr">Une pomme, s'il vous plaît.</p>
+            
+            <p class="phrase-jp" style="margin-top: 15px;">べんとうがみっつあります。</p>
+            <p class="phrase-romaji">Bentō ga mittsu arimasu.</p>
+            <p class="phrase-fr">Il y a trois bentos.</p>
+            
+            <p class="phrase-jp" style="margin-top: 15px;">ソファがふたつあります。</p>
+            <p class="phrase-romaji">Sofa ga futatsu arimasu.</p>
+            <p class="phrase-fr">Il y a deux sofas.</p>
+        </div>
+
+        <div class="attention">
+            <div class="attention-titre">⚠️ Limitation : つ (tsu) s'arrête à 10 !</div>
+            <p>Pour 11 et plus, on utilise d'autres compteurs spécifiques (こ, ほん, まい, etc.)</p>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <!-- SECTION 3: COMPTEUR PERSONNES -->
+        <h2>👥 3. Compteur pour les Personnes : 人 (nin / ri)</h2>
+
+        <div class="grammar-box">
+            <div class="grammar-title">🎯 人 (nin/ri) - Pour compter les personnes</div>
+        </div>
+        
+        <table>
+            <tr>
+                <th>Nombre</th>
+                <th>Hiragana</th>
+                <th>Romaji</th>
+                <th>Kanji</th>
+            </tr>
+            <tr>
+                <td>1 personne</td>
+                <td class="hiragana">ひとり</td>
+                <td class="romaji">hitori</td>
+                <td>一人</td>
+            </tr>
+            <tr>
+                <td>2 personnes</td>
+                <td class="hiragana">ふたり</td>
+                <td class="romaji">futari</td>
+                <td>二人</td>
+            </tr>
+            <tr>
+                <td>3 personnes</td>
+                <td class="hiragana">さんにん</td>
+                <td class="romaji">san-nin</td>
+                <td>三人</td>
+            </tr>
+            <tr>
+                <td>4 personnes</td>
+                <td class="hiragana">よにん</td>
+                <td class="romaji">yo-nin</td>
+                <td>四人</td>
+            </tr>
+            <tr>
+                <td>5 personnes</td>
+                <td class="hiragana">ごにん</td>
+                <td class="romaji">go-nin</td>
+                <td>五人</td>
+            </tr>
+            <tr>
+                <td>6 personnes</td>
+                <td class="hiragana">ろくにん</td>
+                <td class="romaji">roku-nin</td>
+                <td>六人</td>
+            </tr>
+            <tr>
+                <td>7 personnes</td>
+                <td class="hiragana">しちにん / ななにん</td>
+                <td class="romaji">shichi-nin / nana-nin</td>
+                <td>七人</td>
+            </tr>
+            <tr>
+                <td>8 personnes</td>
+                <td class="hiragana">はちにん</td>
+                <td class="romaji">hachi-nin</td>
+                <td>八人</td>
+            </tr>
+            <tr>
+                <td>9 personnes</td>
+                <td class="hiragana">きゅうにん</td>
+                <td class="romaji">kyū-nin</td>
+                <td>九人</td>
+            </tr>
+            <tr>
+                <td>10 personnes</td>
+                <td class="hiragana">じゅうにん</td>
+                <td class="romaji">jū-nin</td>
+                <td>十人</td>
+            </tr>
+        </table>
+
+        <div class="number-special">
+            <h4 style="color: #ff9800; margin-bottom: 10px;">⚡ Cas spéciaux : 1 et 2 !</h4>
+            <p><strong>1 personne</strong> = ひとり (hitori) - PAS いちにん ❌</p>
+            <p><strong>2 personnes</strong> = ふたり (futari) - PAS ににん ❌</p>
+            <p style="margin-top: 10px;">À partir de 3, c'est régulier : さんにん, よにん, ごにん...</p>
+        </div>
+
+        <div class="exemple">
+            <div class="exemple-titre">✏️ Exemples</div>
+            
+            <p class="phrase-jp">かぞくはよにんです。</p>
+            <p class="phrase-romaji">Kazoku wa yo-nin desu.</p>
+            <p class="phrase-fr">Ma famille compte 4 personnes.</p>
+            
+            <p class="phrase-jp" style="margin-top: 15px;">いまにひとりいます。</p>
+            <p class="phrase-romaji">Ima ni hitori imasu.</p>
+            <p class="phrase-fr">Il y a une personne dans le salon.</p>
+            
+            <p class="phrase-jp" style="margin-top: 15px;">レストランでふたりです。</p>
+            <p class="phrase-romaji">Resutoran de futari desu.</p>
+            <p class="phrase-fr">Nous sommes deux au restaurant.</p>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <!-- SECTION 4: COMPTEUR ANIMAUX -->
+        <h2>🐱 4. Compteur pour les Animaux : 匹 (hiki / piki / biki)</h2>
+
+        <div class="grammar-box">
+            <div class="grammar-title">🎯 匹 (hiki) - Pour compter les petits animaux</div>
+            <p>⚠️ Attention : Le son change selon le nombre !</p>
+        </div>
+        
+        <table>
+            <tr>
+                <th>Nombre</th>
+                <th>Hiragana</th>
+                <th>Romaji</th>
+                <th>Changement</th>
+            </tr>
+            <tr>
+                <td>1 animal</td>
+                <td class="hiragana">いっぴき</td>
+                <td class="romaji">ippiki</td>
+                <td>h → <strong>p</strong></td>
+            </tr>
+            <tr>
+                <td>2 animaux</td>
+                <td class="hiragana">にひき</td>
+                <td class="romaji">ni-hiki</td>
+                <td>normal</td>
+            </tr>
+            <tr>
+                <td>3 animaux</td>
+                <td class="hiragana">さんびき</td>
+                <td class="romaji">san-biki</td>
+                <td>h → <strong>b</strong></td>
+            </tr>
+            <tr>
+                <td>4 animaux</td>
+                <td class="hiragana">よんひき</td>
+                <td class="romaji">yon-hiki</td>
+                <td>normal</td>
+            </tr>
+            <tr>
+                <td>5 animaux</td>
+                <td class="hiragana">ごひき</td>
+                <td class="romaji">go-hiki</td>
+                <td>normal</td>
+            </tr>
+            <tr>
+                <td>6 animaux</td>
+                <td class="hiragana">ろっぴき</td>
+                <td class="romaji">roppiki</td>
+                <td>h → <strong>p</strong></td>
+            </tr>
+            <tr>
+                <td>7 animaux</td>
+                <td class="hiragana">ななひき</td>
+                <td class="romaji">nana-hiki</td>
+                <td>normal</td>
+            </tr>
+            <tr>
+                <td>8 animaux</td>
+                <td class="hiragana">はっぴき</td>
+                <td class="romaji">happiki</td>
+                <td>h → <strong>p</strong></td>
+            </tr>
+            <tr>
+                <td>9 animaux</td>
+                <td class="hiragana">きゅうひき</td>
+                <td class="romaji">kyū-hiki</td>
+                <td>normal</td>
+            </tr>
+            <tr>
+                <td>10 animaux</td>
+                <td class="hiragana">じゅっぴき</td>
+                <td class="romaji">juppiki</td>
+                <td>h → <strong>p</strong></td>
+            </tr>
+        </table>
+
+        <div class="astuce">
+            <div class="astuce-titre">💡 Règle des changements de son</div>
+            <ul style="margin-top: 10px; line-height: 1.8;">
+                <li><strong>ひき (hiki)</strong> = sons normaux : 2, 4, 5, 7, 9</li>
+                <li><strong>ぴき (piki)</strong> = sons "p" : 1, 6, 8, 10</li>
+                <li><strong>びき (biki)</strong> = sons "b" : 3 (さんびき)</li>
+            </ul>
+            <p style="margin-top: 10px;"><em>Astuce :</em> 1-6-8-10 se terminent par des sons "durs" (ichi, roku, hachi, jū) → ぴき</p>
+        </div>
+
+        <div class="exemple">
+            <div class="exemple-titre">✏️ Exemples avec animaux</div>
+            
+            <p class="phrase-jp">ねこがいっぴきいます。</p>
+            <p class="phrase-romaji">Neko ga ippiki imasu.</p>
+            <p class="phrase-fr">Il y a un chat.</p>
+            
+            <p class="phrase-jp" style="margin-top: 15px;">いぬがにひきいます。</p>
+            <p class="phrase-romaji">Inu ga ni-hiki imasu.</p>
+            <p class="phrase-fr">Il y a deux chiens.</p>
+            
+            <p class="phrase-jp" style="margin-top: 15px;">とりがさんびきいます。</p>
+            <p class="phrase-romaji">Tori ga san-biki imasu.</p>
+            <p class="phrase-fr">Il y a trois oiseaux.</p>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <!-- SECTION 5: FAMILLE -->
+        <h2>👨‍👩‍👧‍👦 5. Membres de la Famille</h2>
+
+        <h3>👪 Vocabulaire de la famille</h3>
+        
+        <table>
+            <tr>
+                <th>Membre</th>
+                <th>Ma famille (hiragana)</th>
+                <th>Romaji</th>
+                <th>Famille des autres</th>
+            </tr>
+            <tr>
+                <td>Famille</td>
+                <td class="hiragana">かぞく</td>
+                <td class="romaji">kazoku</td>
+                <td>ごかぞく (go-kazoku)</td>
+            </tr>
+            <tr>
+                <td>Père</td>
+                <td class="hiragana">ちち</td>
+                <td class="romaji">chichi</td>
+                <td>おとうさん (otō-san)</td>
+            </tr>
+            <tr>
+                <td>Mère</td>
+                <td class="hiragana">はは</td>
+                <td class="romaji">haha</td>
+                <td>おかあさん (okā-san)</td>
+            </tr>
+            <tr>
+                <td>Grand frère</td>
+                <td class="hiragana">あに</td>
+                <td class="romaji">ani</td>
+                <td>おにいさん (onī-san)</td>
+            </tr>
+            <tr>
+                <td>Grande sœur</td>
+                <td class="hiragana">あね</td>
+                <td class="romaji">ane</td>
+                <td>おねえさん (onē-san)</td>
+            </tr>
+            <tr>
+                <td>Petit frère</td>
+                <td class="hiragana">おとうと</td>
+                <td class="romaji">otōto</td>
+                <td>おとうとさん (otōto-san)</td>
+            </tr>
+            <tr>
+                <td>Petite sœur</td>
+                <td class="hiragana">いもうと</td>
+                <td class="romaji">imōto</td>
+                <td>いもうとさん (imōto-san)</td>
+            </tr>
+        </table>
+
+        <div class="attention">
+            <div class="attention-titre">⚠️ Important : 2 vocabulaires différents !</div>
+            <p><strong>Pour MA famille :</strong> Formes simples (ちち, はは, あに, あね)</p>
+            <p><strong>Pour la famille des AUTRES :</strong> Formes polies avec お/さん (おとうさん, おかあさん)</p>
+        </div>
+
+        <div class="exemple">
+            <div class="exemple-titre">✏️ Exemples</div>
+            
+            <p class="phrase-jp">かぞくはよにんです。</p>
+            <p class="phrase-romaji">Kazoku wa yo-nin desu.</p>
+            <p class="phrase-fr">Ma famille compte 4 personnes.</p>
+            
+            <p class="phrase-jp" style="margin-top: 15px;">ちちとははとあにとわたしです。</p>
+            <p class="phrase-romaji">Chichi to haha to ani to watashi desu.</p>
+            <p class="phrase-fr">Mon père, ma mère, mon grand frère et moi.</p>
+            
+            <p class="phrase-jp" style="margin-top: 15px;">おとうとがふたりいます。</p>
+            <p class="phrase-romaji">Otōto ga futari imasu.</p>
+            <p class="phrase-fr">J'ai deux petits frères.</p>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <!-- SECTION 6: ÂGES -->
+        <h2>🎂 6. Dire son Âge : 歳 (sai)</h2>
+
+        <div class="grammar-box">
+            <div class="grammar-title">🎯 歳 (sai) - Pour dire l'âge</div>
+            <p><strong>Structure :</strong> [Nombre] + さい (sai)</p>
+        </div>
+        
+        <table>
+            <tr>
+                <th>Âge</th>
+                <th>Hiragana</th>
+                <th>Romaji</th>
+                <th>Kanji</th>
+            </tr>
+            <tr>
+                <td>1 an</td>
+                <td class="hiragana">いっさい</td>
+                <td class="romaji">issai</td>
+                <td>一歳</td>
+            </tr>
+            <tr>
+                <td>2 ans</td>
+                <td class="hiragana">にさい</td>
+                <td class="romaji">ni-sai</td>
+                <td>二歳</td>
+            </tr>
+            <tr>
+                <td>3 ans</td>
+                <td class="hiragana">さんさい</td>
+                <td class="romaji">san-sai</td>
+                <td>三歳</td>
+            </tr>
+            <tr>
+                <td>4 ans</td>
+                <td class="hiragana">よんさい</td>
+                <td class="romaji">yon-sai</td>
+                <td>四歳</td>
+            </tr>
+            <tr>
+                <td>5 ans</td>
+                <td class="hiragana">ごさい</td>
+                <td class="romaji">go-sai</td>
+                <td>五歳</td>
+            </tr>
+            <tr>
+                <td>6 ans</td>
+                <td class="hiragana">ろくさい</td>
+                <td class="romaji">roku-sai</td>
+                <td>六歳</td>
+            </tr>
+            <tr>
+                <td>7 ans</td>
+                <td class="hiragana">ななさい</td>
+                <td class="romaji">nana-sai</td>
+                <td>七歳</td>
+            </tr>
+            <tr>
+                <td>8 ans</td>
+                <td class="hiragana">はっさい</td>
+                <td class="romaji">hassai</td>
+                <td>八歳</td>
+            </tr>
+            <tr>
+                <td>9 ans</td>
+                <td class="hiragana">きゅうさい</td>
+                <td class="romaji">kyū-sai</td>
+                <td>九歳</td>
+            </tr>
+            <tr>
+                <td>10 ans</td>
+                <td class="hiragana">じゅっさい</td>
+                <td class="romaji">jussai</td>
+                <td>十歳</td>
+            </tr>
+            <tr>
+                <td>20 ans</td>
+                <td class="hiragana">はたち</td>
+                <td class="romaji">hatachi</td>
+                <td>二十歳</td>
+            </tr>
+            <tr>
+                <td>25 ans</td>
+                <td class="hiragana">にじゅうごさい</td>
+                <td class="romaji">ni-jū-go-sai</td>
+                <td>二十五歳</td>
+            </tr>
+            <tr>
+                <td>30 ans</td>
+                <td class="hiragana">さんじゅっさい</td>
+                <td class="romaji">san-jussai</td>
+                <td>三十歳</td>
+            </tr>
+        </table>
+
+        <div class="number-special">
+            <h4 style="color: #ff9800; margin-bottom: 10px;">⚡ Cas spéciaux !</h4>
+            <p><strong>1 an</strong> = いっさい (issai) - Double "s"</p>
+            <p><strong>8 ans</strong> = はっさい (hassai) - Double "s"</p>
+            <p><strong>10 ans</strong> = じゅっさい (jussai) - Double "s"</p>
+            <p><strong>20 ans</strong> = はたち (hatachi) - MOT SPÉCIAL !</p>
+        </div>
+
+        <h3>❓ Questions sur l'âge</h3>
+        
+        <div class="exemple">
+            <div class="exemple-titre">✏️ Demander et répondre</div>
+            
+            <p class="phrase-jp">Q: なんさいですか。</p>
+            <p class="phrase-romaji">Q: Nan-sai desu ka.</p>
+            <p class="phrase-fr">Q: Quel âge avez-vous ?</p>
+            
+            <p class="phrase-jp" style="margin-top: 15px;">A: にじゅうごさいです。</p>
+            <p class="phrase-romaji">A: Ni-jū-go-sai desu.</p>
+            <p class="phrase-fr">A: J'ai 25 ans.</p>
+            
+            <p class="phrase-jp" style="margin-top: 15px;">Q: おとうとさんはなんさいですか。</p>
+            <p class="phrase-romaji">Q: Otōto-san wa nan-sai desu ka.</p>
+            <p class="phrase-fr">Q: Quel âge a ton petit frère ?</p>
+            
+            <p class="phrase-jp" style="margin-top: 15px;">A: じゅうごさいです。</p>
+            <p class="phrase-romaji">A: Jū-go-sai desu.</p>
+            <p class="phrase-fr">A: Il a 15 ans.</p>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <!-- SECTION 7: AUTRES COMPTEURS UTILES -->
+        <h2>📦 7. Autres Compteurs Utiles (JLPT N5)</h2>
+
+        <div class="counter-grid">
+            <div class="counter-box">
+                <h4>こ (ko) - Objets petits</h4>
+                <p style="margin-top: 10px;">りんご、たまご<br>(pommes, œufs)</p>
+                <p style="margin-top: 10px; font-size: 0.9em;">いっこ, にこ, さんこ...</p>
+            </div>
+
+            <div class="counter-box">
+                <h4>まい (mai) - Objets plats</h4>
+                <p style="margin-top: 10px;">紙、CD、写真<br>(papier, CD, photos)</p>
+                <p style="margin-top: 10px; font-size: 0.9em;">いちまい, にまい, さんまい...</p>
+            </div>
+
+            <div class="counter-box">
+                <h4>ほん (hon) - Objets longs</h4>
+                <p style="margin-top: 10px;">ペン、ボトル<br>(stylos, bouteilles)</p>
+                <p style="margin-top: 10px; font-size: 0.9em;">いっぽん, にほん, さんぼん...</p>
+            </div>
+
+            <div class="counter-box">
+                <h4>だい (dai) - Machines</h4>
+                <p style="margin-top: 10px;">くるま、テレビ<br>(voitures, télés)</p>
+                <p style="margin-top: 10px; font-size: 0.9em;">いちだい, にだい, さんだい...</p>
+            </div>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <!-- SECTION 8: EXERCICES -->
+        <h2>✏️ 8. Exercices Pratiques</h2>
+
+        <div class="exercice">
+            <div class="exercice-titre">📝 Exercice 1 : Compte les objets</div>
+            <ol>
+                <li>りんごが＿＿＿あります。(3 pommes)</li>
+                <li>べんとうが＿＿＿あります。(2 bentos)</li>
+                <li>ソファが＿＿＿あります。(1 sofa)</li>
+                <li>テーブルが＿＿＿あります。(5 tables)</li>
+            </ol>
+        </div>
+
+        <div class="exercice">
+            <div class="exercice-titre">📝 Exercice 2 : Compte les personnes</div>
+            <ol>
+                <li>かぞくは＿＿＿です。(4 personnes)</li>
+                <li>いまに＿＿＿います。(2 personnes)</li>
+                <li>レストランで＿＿＿です。(1 personne)</li>
+                <li>がっこうに＿＿＿います。(10 personnes)</li>
+            </ol>
+        </div>
+
+        <div class="exercice">
+            <div class="exercice-titre">📝 Exercice 3 : Compte les animaux</div>
+            <ol>
+                <li>ねこが＿＿＿います。(1 chat)</li>
+                <li>いぬが＿＿＿います。(3 chiens)</li>
+                <li>とりが＿＿＿います。(6 oiseaux)</li>
+            </ol>
+        </div>
+
+        <div class="exercice">
+            <div class="exercice-titre">📝 Exercice 4 : Dis ton âge</div>
+            <ol>
+                <li>わたしは＿＿＿です。(Ton âge)</li>
+                <li>ちちは＿＿＿です。(55 ans)</li>
+                <li>いもうとは＿＿＿です。(12 ans)</li>
+            </ol>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <!-- SECTION 9: RÉCAPITULATIF -->
+        <h2>🎯 9. Récapitulatif JLPT N5</h2>
+
+        <div class="astuce">
+            <div class="astuce-titre">💡 Compteurs essentiels à mémoriser</div>
+            <table style="margin-top: 15px;">
+                <tr>
+                    <th>Compteur</th>
+                    <th>Usage</th>
+                    <th>Exemples</th>
+                </tr>
+                <tr>
+                    <td><strong>つ</strong></td>
+                    <td>Objets génériques (1-10)</td>
+                    <td>ひとつ, ふたつ, みっつ</td>
+                </tr>
+                <tr>
+                    <td><strong>人</strong> (nin/ri)</td>
+                    <td>Personnes</td>
+                    <td>ひとり, ふたり, さんにん</td>
+                </tr>
+                <tr>
+                    <td><strong>匹</strong> (hiki/piki/biki)</td>
+                    <td>Petits animaux</td>
+                    <td>いっぴき, にひき, さんびき</td>
+                </tr>
+                <tr>
+                    <td><strong>歳</strong> (sai)</td>
+                    <td>Âge</td>
+                    <td>いっさい, にさい, はたち</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="attention">
+            <div class="attention-titre">⚠️ Pièges à éviter</div>
+            <ul style="margin-top: 10px; line-height: 1.8;">
+                <li>❌ 1 personne = いちにん → ✅ <strong>ひとり</strong></li>
+                <li>❌ 2 personnes = ににん → ✅ <strong>ふたり</strong></li>
+                <li>❌ 1 chat = いちひき → ✅ <strong>いっぴき</strong></li>
+                <li>❌ 3 chats = さんひき → ✅ <strong>さんびき</strong></li>
+                <li>❌ 20 ans = にじゅっさい → ✅ <strong>はたち</strong></li>
+            </ul>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <!-- FOOTER -->
+        <div style="text-align: center; margin-top: 40px; padding: 20px; background: #e3f2fd; border-radius: 10px;">
+            <h3 style="color: #1976d2; margin-bottom: 10px;">🎌 がんばって！(Ganbatte!)</h3>
+            <p style="color: #666; font-style: italic;">Bon courage pour tes révisions du JLPT N5 !</p>
+            <p style="color: #666; margin-top: 10px;">🔢 なんにんですか？(Nan-nin desu ka?)</p>
+            <p style="color: #666; margin-top: 15px;">📅 Leçon créée le 29 janvier 2026</p>
+            <p style="color: #666;">👨‍🏫 Par ton professeur de japonais Claude</p>
+        </div>
+
+    </div>
+</body>
+</html>
